@@ -36,7 +36,7 @@ namespace MultiplayerARPG.MMO
                 return;
             }
             insertedIds.Add(id);
-            await ExecuteNonQuery(connection, transaction, "INSERT INTO charactersummon (id, characterId, type, sourceId, dataId, summonRemainsDuration, level, exp, currentHp, currentMp) VALUES (@id, @characterId, @type, @dataId, @summonRemainsDuration, @level, @exp, @currentHp, @currentMp)",
+            await ExecuteNonQuery(connection, transaction, "INSERT INTO charactersummon (id, characterId, type, sourceId, dataId, summonRemainsDuration, level, exp, currentHp, currentMp) VALUES (@id, @characterId, @type, @sourceId, @dataId, @summonRemainsDuration, @level, @exp, @currentHp, @currentMp)",
                 new MySqlParameter("@id", id),
                 new MySqlParameter("@characterId", characterId),
                 new MySqlParameter("@type", (byte)characterSummon.type),
