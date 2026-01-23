@@ -6,6 +6,7 @@ namespace Insthync.AudioManager
     {
         private VideoPlayer _cacheVideoPlayer;
         private int _dirtyVolume;
+    	private int _dirtyTrackCount;
 
         void Start()
         {
@@ -18,9 +19,10 @@ namespace Insthync.AudioManager
         {
             float volume = AudioManager.Singleton.GetVolumeLevel(SettingId);
             int intVolume = (int)(volume * 100);
-            if (_dirtyVolume != intVolume)
+            if (_dirtyVolume != intVolume && _cacheVideoPlayer.audioTrackCount != _dirtyTrackCount)
             {
                 _dirtyVolume = intVolume;
+            	_dirtyTrackCount = _cacheVideoPlayer.audioTrackCount;
                 if (_cacheVideoPlayer.canSetDirectAudioVolume)
                 {
                     for (ushort i = 0; i < _cacheVideoPlayer.audioTrackCount; ++i)
