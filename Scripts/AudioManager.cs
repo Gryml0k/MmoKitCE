@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 namespace Insthync.AudioManager
@@ -26,6 +27,7 @@ namespace Insthync.AudioManager
         public AudioSetting sfxVolumeSetting = new AudioSetting() { id = "SFX" };
         public AudioSetting ambientVolumeSetting = new AudioSetting() { id = "AMBIENT" };
         public AudioSetting[] otherVolumeSettings;
+    	public UnityEvent<string, float> onSetVolumeLevel;
 
         public Dictionary<string, AudioSetting> VolumeSettings { get; private set; } = new Dictionary<string, AudioSetting>();
 
@@ -74,14 +76,17 @@ namespace Insthync.AudioManager
                 return 0;
 
             if (VolumeSettings.ContainsKey(id))
-                return VolumeSettings[id].Level;
+                return VolumeSettings[id].Level * masterVolumeSetting.Level;
             return 0;
         }
 
         public void SetVolumeLevelSetting(string id, float level)
         {
             if (VolumeSettings.ContainsKey(id))
+            {
                 VolumeSettings[id].LevelSetting = level;
+            	onSetVolumeLevel?.Invoke(id, level);
+            }
         }
 
         public float GetVolumeLevelSetting(string id)
@@ -91,16 +96,48 @@ namespace Insthync.AudioManager
             return 0;
         }
 
+		public float GetBgmVolume()
+		{
+			return bgmVolumeSetting.Level * masterVolumeSetting.Level;
+        }
+
+		public float GetSfxVolume()
+		{
+			return sfxVolumeSetting.Level * masterVolumeSetting.Level;
+        }
+
+		public float GetAmbientVolume()
+		{
+			return ambientVolumeSetting.Level * masterVolumeSetting.Level;
+        }
+
         public static void PlaySfxClipAtPoint(AudioClip audioClip, Vector3 position, float volumeScale = 1f)
         {
             if (Application.isBatchMode || AudioListener.pause || audioClip == null) return;
-            AudioSource.PlayClipAtPoint(audioClip, position, (Singleton == null ? 1f : Singleton.sfxVolumeSetting.Level) * volumeScale);
+            AudioSource.PlayClipAtPoint(audioClip, position, (Singleton == null ? 1f : Singleton.GetSfxVolume()) * volumeScale);
         }
+
+	    public static void PlaySfxClipAtPoint(AudioClip audioClip, Vector3 position, float minDistance, float maxDistance, float volumeScale = 1f, float spatialBlend = 1f, AudioRolloffMode audioRolloffMode = AudioRolloffMode.Linear)
+	    {
+	        float volume = (Singleton == null ? 1f : Singleton.GetSfxVolume()) * volumeScale;
+
+	        GameObject gameObject = new GameObject("_OneShotAudio");
+	        gameObject.transform.position = position;
+	        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+	        audioSource.clip = audioClip;
+	        audioSource.volume = volume;
+	        audioSource.spatialBlend = spatialBlend;
+	        audioSource.rolloffMode = audioRolloffMode;
+	        audioSource.minDistance = minDistance;
+	        audioSource.maxDistance = maxDistance;
+	        audioSource.Play();
+	        Object.Destroy(gameObject, audioClip.length);
+	    }
 
         public static void PlaySfxClipAtAudioSource(AudioClip audioClip, AudioSource audioSource, float volumeScale = 1f)
         {
             if (Application.isBatchMode || AudioListener.pause || audioClip == null || audioSource == null) return;
-            audioSource.PlayOneShot(audioClip, (Singleton == null ? 1f : Singleton.sfxVolumeSetting.Level) * volumeScale);
+            audioSource.PlayOneShot(audioClip, (Singleton == null ? 1f : Singleton.GetSfxVolume()) * volumeScale);
         }
     }
 }
