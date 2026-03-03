@@ -1,4 +1,5 @@
 using Insthync.DevExtension;
+using LiteNetLibManager;
 using MultiplayerARPG.GameData.Model.Playables;
 
 namespace MultiplayerARPG
@@ -7,6 +8,42 @@ namespace MultiplayerARPG
     {
         public static partial void CacheDevExtMethods()
         {
+            // Cache LiteNetLibBehaviour
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(MonsterCharacterEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(NpcEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(HarvestableEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(CurrencyDropEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(ExpDropEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(GoldDropEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(ItemDropEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(ItemsContainerEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(VehicleEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(BuildingEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(CampFireEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(DoorEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(QueuedWorkbenchEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(StorageEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(WorkbenchEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(WarpPortalEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(CharacterControllerEntityMovement));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(SimpleCharacterControllerEntityMovement));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(NavMeshEntityMovement));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(SimpleNavMeshEntityMovement));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(RigidBodyEntityMovement2D));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(DefaultCharacterAttackComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(DefaultCharacterChargeComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(DefaultCharacterReloadComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(DefaultCharacterUseSkillComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(CharacterLadderComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterBuildingComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterCraftingComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterDealingComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterDuelingComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterNpcActionComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterPkComponent));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterVendingComponent));
+            // Cache DevExt
             DevExtUtils.CacheInstanceDevExtMethods(typeof(PlayerCharacterEntity), "Awake");
             DevExtUtils.CacheInstanceDevExtMethods(typeof(PlayerCharacterEntity), "OnDestroy");
             DevExtUtils.CacheInstanceDevExtMethods(typeof(MonsterCharacterEntity), "Awake");
