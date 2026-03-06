@@ -171,6 +171,8 @@ namespace MultiplayerARPG
         protected virtual void OnDestroy()
         {
             Desetup(PlayingCharacterEntity);
+            if (Singleton == this)
+                Singleton = null;
             this.InvokeInstanceDevExtMethods("OnDestroy");
         }
 
