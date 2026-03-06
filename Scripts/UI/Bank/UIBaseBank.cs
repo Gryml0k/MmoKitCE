@@ -26,6 +26,9 @@ namespace MultiplayerARPG
         public void ResetDepositUIs()
         {
             if (uiDepositInput == null)
+                return;
+
+            if (uiDepositInput == null)
                 uiDepositInput.SetupForIntegerInput(OnDepositConfirm, 0, null, 0);
             if (uiDepositInput.uiInputField != null)
             {
