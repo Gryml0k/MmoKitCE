@@ -32,7 +32,18 @@ namespace MultiplayerARPG
         protected override void Awake()
         {
             base.Awake();
-            Identity.onGetInstance.AddListener(OnGetInstance);
+            Identity.onGetInstance += OnGetInstance;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (Identity != null)
+                Identity.onGetInstance -= OnGetInstance;
+            _identity = null;
+            _receivingDamageHitBoxes?.Clear();
+            onDestroy?.RemoveAllListeners();
+            onDestroy = null;
         }
 
         protected override void OnEnable()
@@ -44,17 +55,6 @@ namespace MultiplayerARPG
         protected virtual void OnDisable()
         {
             UpdateManager.Unregister(this);
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            if (Identity != null && Identity.onGetInstance != null)
-                Identity.onGetInstance.RemoveListener(OnGetInstance);
-            _identity = null;
-            _receivingDamageHitBoxes?.Clear();
-            onDestroy?.RemoveAllListeners();
-            onDestroy = null;
         }
 
         /// <summary>

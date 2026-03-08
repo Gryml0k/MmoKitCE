@@ -31,14 +31,14 @@ namespace MultiplayerARPG
         {
             base.Awake();
             gameObject.layer = PhysicLayers.IgnoreRaycast;
-            Identity.onGetInstance.AddListener(OnGetInstance);
+            Identity.onGetInstance += OnGetInstance;
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            if (Identity != null && Identity.onGetInstance != null)
-                Identity.onGetInstance.RemoveListener(OnGetInstance);
+            if (Identity != null)
+                Identity.onGetInstance -= OnGetInstance;
             _identity = null;
             _receivingBuffCharacters?.Clear();
             onDestroy?.RemoveAllListeners();
