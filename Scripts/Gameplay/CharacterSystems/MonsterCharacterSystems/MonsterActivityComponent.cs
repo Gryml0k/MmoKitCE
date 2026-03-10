@@ -105,11 +105,11 @@ namespace MultiplayerARPG
                 Entity.SetAttackTarget(enemy);
         }
 
-        private void Entity_onReceivedDamage(HitBoxPosition position, Vector3 fromPosition, IGameEntity attacker, CombatAmountType combatAmountType, int totalDamage, CharacterItem weapon, BaseSkill skill, int skillLevel, CharacterBuff buff, bool isDamageOverTime)
+        private void Entity_onReceivedDamage(HitBoxPosition position, Vector3 fromPosition, EntityInfo instigator, CombatAmountType combatAmountType, int totalDamage, CharacterItem weapon, BaseSkill skill, int skillLevel, CharacterBuff buff, bool isDamageOverTime)
         {
-            BaseCharacterEntity attackerCharacter = attacker as BaseCharacterEntity;
-            if (attackerCharacter == null)
+            if (!instigator.TryGetEntity(out BaseCharacterEntity attackerCharacter))
                 return;
+
             // If character is not dead, try to attack
             if (!Entity.IsDead())
             {

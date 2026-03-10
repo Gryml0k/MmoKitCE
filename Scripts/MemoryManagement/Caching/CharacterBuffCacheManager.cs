@@ -43,12 +43,12 @@ namespace MultiplayerARPG
 
         public EntityInfo GetBuffApplier(in CharacterBuff data)
         {
-            return GetOrMakeCache(data.id, in data)?.BuffApplier ?? default;
+            return GetOrMakeCache(data.id, in data)?.BuffApplier ?? EntityInfo.Empty;
         }
 
         public CharacterItem GetBuffApplierWeapon(in CharacterBuff data)
         {
-            return GetOrMakeCache(data.id, in data)?.BuffApplierWeapon ?? default;
+            return GetOrMakeCache(data.id, in data)?.BuffApplierWeapon ?? CharacterItem.Empty;
         }
     }
 }

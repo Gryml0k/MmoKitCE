@@ -361,7 +361,7 @@ namespace MultiplayerARPG
 
         public EntityInfo GetInfo()
         {
-            return DamageableEntity == null ? default : DamageableEntity.GetInfo();
+            return DamageableEntity == null ? EntityInfo.Empty : DamageableEntity.GetInfo();
         }
 
         public bool IsHide()

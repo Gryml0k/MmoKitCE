@@ -16,6 +16,7 @@
         public int PartyId { get; private set; }
         public int GuildId { get; private set; }
         public bool IsInSafeArea { get; private set; }
+        public IGameEntity Entity { get; private set; }
         public EntityInfo Summoner { get; private set; }
         public bool HasSummoner => Summoner != null && Summoner.Type > 0;
 
@@ -30,6 +31,7 @@
             PartyId = 0;
             GuildId = 0;
             IsInSafeArea = false;
+            Entity = null;
             Summoner = null;
         }
 
@@ -43,7 +45,8 @@
             int partyId,
             int guildId,
             bool isInSafeArea,
-            BaseCharacterEntity summonerEntity = null)
+            IGameEntity entity,
+            IGameEntity summonerEntity)
         {
             Type = type;
             ObjectId = objectId;
@@ -54,8 +57,9 @@
             PartyId = partyId;
             GuildId = guildId;
             IsInSafeArea = isInSafeArea;
+            Entity = entity;
             Summoner = null;
-            if (summonerEntity != null)
+            if (!summonerEntity.IsNull())
                 Summoner = summonerEntity.GetInfo();
             return this;
         }
@@ -63,8 +67,11 @@
         public bool TryGetEntity<T>(out T entity)
             where T : class, IGameEntity
         {
-            if (BaseGameNetworkManager.Singleton.TryGetEntityByObjectId(ObjectId, out entity) && entity.Entity is T)
+            if (!Entity.IsNull() && Entity is T castedEntity)
+            {
+                entity = castedEntity;
                 return true;
+            }
             entity = null;
             return false;
         }

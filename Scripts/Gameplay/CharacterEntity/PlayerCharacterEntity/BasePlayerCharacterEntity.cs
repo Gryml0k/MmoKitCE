@@ -154,7 +154,9 @@ namespace MultiplayerARPG
                 FactionId,
                 PartyId,
                 GuildId,
-                IsInSafeArea);
+                IsInSafeArea,
+                this,
+                null);
         }
 
         protected override void EntityAwake()

@@ -13,7 +13,7 @@ namespace MultiplayerARPG
     public delegate void ReceiveDamageDelegate(
         HitBoxPosition position,
         Vector3 fromPosition,
-        IGameEntity attacker,
+        EntityInfo instigator,
         Dictionary<DamageElement, MinMaxFloat> damageAmounts,
         CharacterItem weapon,
         BaseSkill skill,
@@ -22,7 +22,7 @@ namespace MultiplayerARPG
     public delegate void ReceivedDamageDelegate(
         HitBoxPosition position,
         Vector3 fromPosition,
-        IGameEntity attacker,
+        EntityInfo instigator,
         CombatAmountType combatAmountType,
         int totalDamage,
         CharacterItem weapon,

@@ -52,7 +52,7 @@ namespace MultiplayerARPG
         protected void OnReceivedDamage(
             HitBoxPosition position,
             Vector3 fromPosition,
-            IGameEntity attacker,
+            EntityInfo instigator,
             CombatAmountType combatAmountType,
             int totalDamage,
             CharacterItem weapon,
