@@ -181,20 +181,23 @@ namespace MultiplayerARPG
             GameInstance.MonsterEntitiesData[EntityId] = CharacterDatabase;
         }
 
-        public override EntityInfo GetInfo()
+        public virtual string GetId()
         {
-            string id;
             using (Utf16ValueStringBuilder strBuilder = ZString.CreateStringBuilder(true))
             {
                 strBuilder.Append(EntityTypes.Monster);
                 strBuilder.Append('_');
                 strBuilder.Append(ObjectId);
-                id = strBuilder.ToString();
+                return strBuilder.ToString();
             }
+        }
+
+        public override EntityInfo GetInfo()
+        {
             return _info.SetEntityInfo(
                 EntityTypes.Monster,
                 ObjectId,
-                id,
+                Id,
                 SubChannelId,
                 DataId,
                 FactionId,
@@ -209,6 +212,12 @@ namespace MultiplayerARPG
             base.EntityAwake();
             gameObject.tag = CurrentGameInstance.monsterTag;
             gameObject.layer = CurrentGameInstance.monsterLayer;
+        }
+
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+            Id = GetId();
         }
 
         public override void InitialRequiredComponents()
