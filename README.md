@@ -4,7 +4,9 @@ CE consists of upstreams which are setup as follows:
 
 ```sh
 $ git remote add core https://github.com/denariigames/UnityMultiplayerARPG_Core.git
+$ git remote add mmo https://github.com/denariigames/UnityMultiplayerARPG_MMO.git
 $ git subtree add --prefix=Core core upstream
+$ git subtree add --prefix=MMO mmo upstream
 ```
 
 ### Preparing Upstream Repos
