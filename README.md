@@ -1,3 +1,17 @@
+## Installing CE
+
+MmoKitCE_Settings.unitypackage will install base project settings. After your project is up and running, you can safely delete this file. The following settings will be overwritten by this process:
+
+- ProjectSettings/DynamicsManager.asset
+- ProjectSettings/InputManager.asset
+- ProjectSettings/Physics2DManager.asset
+- ProjectSettings/ProjectSettings.asset
+- ProjectSettings/QualitySettings.asset
+- ProjectSettings/TagManager.asset
+- ProjectSettings/TimeManager.asset
+
+The original Kit had additional settings which were not included in CE: AudioManager, EditorBuildSettings, EditorSettings, GraphicSettings, ShaderGraphSettings, UnityConnectSettings, VersionControlSettings
+
 ### Preparing MmoKitCE Repo
 
 CE consists of upstreams which are setup as follows:
