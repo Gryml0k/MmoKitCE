@@ -221,10 +221,9 @@ namespace MultiplayerARPG
             };
         }
 
-        public override void OnSetup()
+        public override void OnIdentityInitialize()
         {
-            base.OnSetup();
-            itemDropData.onChange += OnItemDropDataChange;
+            base.OnIdentityInitialize();
             if (IsServer && IsSceneObject)
             {
                 // Init just once when started, if this entity is scene object
@@ -236,6 +235,7 @@ namespace MultiplayerARPG
         {
             base.SetupNetElements();
             itemDropData.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            itemDropData.onChange += OnItemDropDataChange;
         }
 
         public virtual void SetSpawnArea(GameSpawnArea<ItemDropEntity> spawnArea, ItemDropEntity spawnPrefab, int spawnLevel, Vector3 spawnPosition)

@@ -131,10 +131,9 @@ namespace MultiplayerARPG
             _dropTime = Time.unscaledTime;
         }
 
-        public override void OnSetup()
+        public override void OnIdentityInitialize()
         {
-            base.OnSetup();
-            amount.onChange += OnAmountChange;
+            base.OnIdentityInitialize();
             if (IsServer && IsSceneObject)
             {
                 // Init just once when started, if this entity is scene object
@@ -146,6 +145,7 @@ namespace MultiplayerARPG
         {
             base.SetupNetElements();
             amount.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            amount.onChange += OnAmountChange;
         }
 
         public virtual void SetSpawnArea(GameSpawnArea<BaseRewardDropEntity> spawnArea, BaseRewardDropEntity spawnPrefab, int spawnLevel, Vector3 spawnPosition)

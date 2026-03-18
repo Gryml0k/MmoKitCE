@@ -88,9 +88,9 @@ namespace MultiplayerARPG
             _items.forOwnerOnly = false;
         }
 
-        public override void OnSetup()
+        public override void OnIdentityInitialize()
         {
-            base.OnSetup();
+            base.OnIdentityInitialize();
             NetworkDestroy(_appearDuration);
         }
 

@@ -33,16 +33,11 @@ namespace MultiplayerARPG
             set { isOpen.Value = value; }
         }
 
-        public override void OnSetup()
-        {
-            base.OnSetup();
-            isOpen.onChange += OnIsOpenChange;
-        }
-
         protected override void SetupNetElements()
         {
             base.SetupNetElements();
             isOpen.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            isOpen.onChange += OnIsOpenChange;
         }
 
         protected override void EntityOnDestroy()

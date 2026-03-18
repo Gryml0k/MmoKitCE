@@ -169,6 +169,9 @@ namespace MultiplayerARPG
             set { destroyRespawnDelay = value; }
         }
 
+        public readonly List<GameObject> InstantiatedObjects = new List<GameObject>();
+
+        protected bool _isObjectsInstantiated = false;
         protected bool _isDestroyed;
         protected readonly HashSet<string> _looters = new HashSet<string>();
         protected readonly List<CharacterItem> _droppingItems = new List<CharacterItem>();
@@ -214,12 +217,6 @@ namespace MultiplayerARPG
             base.EntityAwake();
             gameObject.tag = CurrentGameInstance.monsterTag;
             gameObject.layer = CurrentGameInstance.monsterLayer;
-        }
-
-        public override void OnStartServer()
-        {
-            base.OnStartServer();
-            Id = GetId();
         }
 
         public override void InitialRequiredComponents()
@@ -281,38 +278,46 @@ namespace MultiplayerARPG
             summonType.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
         }
 
-        public override void OnSetup()
+        public override void OnIdentityInitialize()
         {
-            base.OnSetup();
+            base.OnIdentityInitialize();
             InstantiateMonsterCharacterObjects();
             if (SpawnArea == null)
                 SpawnPosition = EntityTransform.position;
             if (IsServer)
+            {
+                Id = GetId();
                 InitStats();
+            }
         }
 
         private async void InstantiateMonsterCharacterObjects()
         {
             if (!IsClient)
                 return;
+            if (_isObjectsInstantiated)
+                return;
+            _isObjectsInstantiated = true;
+            InstantiatedObjects.DestroyAndNullify();
+            InstantiatedObjects.Clear();
 #if !DISABLE_ADDRESSABLES
             // Instantiates monster objects
-            await CurrentGameInstance.AddressableMonsterCharacterObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.MonsterCharacterObjects, EntityTransform);
+            await CurrentGameInstance.AddressableMonsterCharacterObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.MonsterCharacterObjects, EntityTransform, InstantiatedObjects);
 #else
             foreach (var prefab in CurrentGameInstance.MonsterCharacterObjects)
             {
                 if (prefab == null) continue;
-                Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
+                InstantiatedObjects.Add(Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform));
             }
 #endif
 #if !DISABLE_ADDRESSABLES
             // Instantiates monster minimap objects
-            await CurrentGameInstance.AddressableMonsterCharacterMiniMapObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.MonsterCharacterMiniMapObjects, EntityTransform);
+            await CurrentGameInstance.AddressableMonsterCharacterMiniMapObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.MonsterCharacterMiniMapObjects, EntityTransform, InstantiatedObjects);
 #else
             foreach (var prefab in CurrentGameInstance.MonsterCharacterMiniMapObjects)
             {
                 if (prefab == null) continue;
-                Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
+                InstantiatedObjects.Add(Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform));
             }
 #endif
             // Instantiates monster character UI

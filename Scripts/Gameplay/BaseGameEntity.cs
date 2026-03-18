@@ -3,7 +3,6 @@ using Insthync.ManagedUpdating;
 using Insthync.UnityEditorUtils;
 using LiteNetLib;
 using LiteNetLibManager;
-using LiteNetLib.Utils;
 using System.Collections.Generic;
 using Unity.Profiling;
 using UnityEngine;
@@ -306,27 +305,31 @@ namespace MultiplayerARPG
         protected virtual void OnDrawGizmosSelected()
         {
         }
+
+        protected virtual void OnValidate()
+        {
+        }
 #endif
 
-        public override void OnSetOwnerClient(bool isOwnerClient)
-        {
-            EntityOnSetOwnerClient();
-            if (onSetOwnerClient != null)
-                onSetOwnerClient.Invoke();
-        }
-
-        protected virtual void EntityOnSetOwnerClient()
+        public override sealed void OnSetOwnerClient(bool isOwnerClient)
         {
             foreach (GameObject ownerObject in ownerObjects)
             {
                 if (ownerObject == null) continue;
-                ownerObject.SetActive(IsOwnerClient);
+                ownerObject.SetActive(isOwnerClient);
             }
             foreach (GameObject nonOwnerObject in nonOwnerObjects)
             {
                 if (nonOwnerObject == null) continue;
-                nonOwnerObject.SetActive(!IsOwnerClient);
+                nonOwnerObject.SetActive(!isOwnerClient);
             }
+            EntityOnSetOwnerClient(isOwnerClient);
+            if (onSetOwnerClient != null)
+                onSetOwnerClient.Invoke();
+        }
+
+        protected virtual void EntityOnSetOwnerClient(bool isOwnerClient)
+        {
         }
 
         public void ManagedUpdate()
@@ -456,29 +459,20 @@ namespace MultiplayerARPG
             }
         }
 
-        protected virtual void OnValidate()
+        public override sealed void OnSetup()
         {
-#if UNITY_EDITOR
-            SetupNetElements();
-#endif
-        }
-
-        public override void OnSetup()
-        {
-            base.OnSetup();
-
             if (onSetup != null)
                 onSetup.Invoke();
-
             SetupNetElements();
+            if (onSetupNetElements != null)
+                onSetupNetElements.Invoke();
         }
 
         protected virtual void SetupNetElements()
         {
-            if (onSetupNetElements != null)
-                onSetupNetElements.Invoke();
             syncMetaDataId.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
             syncTitle.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            syncTitle.redundancyCount = 0;
             syncOverrideInput.syncMode = LiteNetLibSyncFieldMode.ServerToOwnerClient;
             syncOverrideMoveSpeed.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
             syncOverrideJumpHeight.syncMode = LiteNetLibSyncFieldMode.ServerToClients;

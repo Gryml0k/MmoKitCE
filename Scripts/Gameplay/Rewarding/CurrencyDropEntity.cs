@@ -64,6 +64,7 @@ namespace MultiplayerARPG
         {
             base.SetupNetElements();
             currencyDataId.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            currencyDataId.onChange += OnCurrencyDataIdChange;
             if (currencyAppearanceSettings != null && currencyAppearanceSettings.Count > 0)
             {
                 foreach (CurrencyAppearanceSetting setting in currencyAppearanceSettings)
@@ -78,12 +79,6 @@ namespace MultiplayerARPG
                     }
                 }
             }
-        }
-
-        public override void OnSetup()
-        {
-            base.OnSetup();
-            currencyDataId.onChange += OnCurrencyDataIdChange;
         }
 
         protected override void EntityOnDestroy()

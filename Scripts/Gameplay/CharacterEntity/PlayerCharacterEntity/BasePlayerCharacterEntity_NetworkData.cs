@@ -472,11 +472,7 @@ namespace MultiplayerARPG
             publicFloats.forOwnerOnly = false;
 #endif
             guildSkills.forOwnerOnly = false;
-        }
 
-        public override void OnSetup()
-        {
-            base.OnSetup();
             // On data changes events
             id.onChange += OnPlayerIdChange;
             syncTitle.onChange += OnPlayerCharacterNameChange;
@@ -572,110 +568,9 @@ namespace MultiplayerARPG
             if (GameInstance.ClientCharacterHandlers != null)
                 GameInstance.ClientCharacterHandlers.UnsubscribePlayerCharacter(this);
         }
-
-        protected override void EntityOnSetOwnerClient()
-        {
-            base.EntityOnSetOwnerClient();
-            InstantiatePlayerCharacterObjects();
-        }
-
-        private async void InstantiatePlayerCharacterObjects()
-        {
-            // Setup relates elements
-            if (IsOwnerClient)
-            {
-                BasePlayerCharacterController controllerPrefab = null;
-#if !EXCLUDE_PREFAB_REFS || DISABLE_ADDRESSABLES
-                if (ControllerPrefab != null)
-                {
-                    controllerPrefab = ControllerPrefab;
-                }
-                else if (CurrentGameInstance.DefaultControllerPrefab != null)
-                {
-                    controllerPrefab = CurrentGameInstance.DefaultControllerPrefab;
-                }
-#endif
-                if (controllerPrefab != null)
-                {
-                    // Do nothing, just have it to make it able to compile properly (it have compile condition above)
-                }
-#if !DISABLE_ADDRESSABLES
-                else if (AddressableControllerPrefab.IsDataValid())
-                {
-                    controllerPrefab = await AddressableControllerPrefab.GetOrLoadAssetAsync<BasePlayerCharacterController>();
-                }
-                else if (CurrentGameInstance.AddressableDefaultControllerPrefab.IsDataValid())
-                {
-                    controllerPrefab = await CurrentGameInstance.AddressableDefaultControllerPrefab.GetOrLoadAssetAsync<BasePlayerCharacterController>();
-                }
-#endif
-                else if (BasePlayerCharacterController.Singleton != null)
-                {
-                    controllerPrefab = BasePlayerCharacterController.LastPrefab;
-                }
-                else
-                {
-                    Logging.LogWarning(ToString(), "`Controller Prefab` is empty so it cannot be instantiated");
-                    controllerPrefab = null;
-                }
-                if (controllerPrefab != null)
-                {
-                    BasePlayerCharacterController.LastPrefab = controllerPrefab;
-                    BasePlayerCharacterController controller = Instantiate(controllerPrefab);
-                    controller.PlayingCharacterEntity = this;
-                }
-#if !DISABLE_ADDRESSABLES
-                // Instantiates owning objects
-                await CurrentGameInstance.AddressableOwningCharacterObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.OwningCharacterObjects, EntityTransform);
-#else
-                foreach (var prefab in CurrentGameInstance.OwningCharacterObjects)
-                {
-                    if (prefab == null) continue;
-                    Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
-                }
-#endif
-#if !DISABLE_ADDRESSABLES
-                // Instantiates owning minimap objects
-                await CurrentGameInstance.AddressableOwningCharacterMiniMapObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.OwningCharacterMiniMapObjects, EntityTransform);
-#else
-                foreach (var prefab in CurrentGameInstance.OwningCharacterMiniMapObjects)
-                {
-                    if (prefab == null) continue;
-                    Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
-                }
-#endif
-                // Instantiates owning character UI
-                InstantiateUI(await CurrentGameInstance.GetLoadedOwningCharacterUIPrefab());
-            }
-            else if (IsClient)
-            {
-#if !DISABLE_ADDRESSABLES
-                // Instantiates non-owning objects
-                await CurrentGameInstance.AddressableNonOwningCharacterObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.NonOwningCharacterObjects, EntityTransform);
-#else
-                foreach (var prefab in CurrentGameInstance.NonOwningCharacterObjects)
-                {
-                    if (prefab == null) continue;
-                    Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
-                }
-#endif
-#if !DISABLE_ADDRESSABLES
-                // Instantiates non-owning minimap objects
-                await CurrentGameInstance.AddressableNonOwningCharacterMiniMapObjects.InstantiateObjectsOrUsePrefabs(CurrentGameInstance.NonOwningCharacterMiniMapObjects, EntityTransform);
-#else
-                foreach (var prefab in CurrentGameInstance.NonOwningCharacterMiniMapObjects)
-                {
-                    if (prefab == null) continue;
-                    Instantiate(prefab, EntityTransform.position, EntityTransform.rotation, EntityTransform);
-                }
-#endif
-                // Instantiates non-owning character UI
-                InstantiateUI(await CurrentGameInstance.GetLoadedNonOwningCharacterUIPrefab());
-            }
-        }
 #endregion
 
-            #region Sync data changes callback
+        #region Sync data changes callback
         private void OnPlayerIdChange(bool isInitial, string oldId, string id)
         {
             if (!string.IsNullOrEmpty(id) && !string.IsNullOrEmpty(CharacterName) && GameInstance.ClientCharacterHandlers != null)

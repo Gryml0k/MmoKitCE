@@ -1,5 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
-using Insthync.UnityEditorUtils;
+﻿using Insthync.UnityEditorUtils;
 using LiteNetLibManager;
 using System.Collections.Generic;
 using UnityEngine;
@@ -257,6 +256,7 @@ namespace MultiplayerARPG
             base.SetupNetElements();
             // Sync fields
             id.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
+            id.redundancyCount = 0;
             level.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
             exp.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
             isInvincible.syncMode = LiteNetLibSyncFieldMode.ServerToClients;
@@ -280,14 +280,10 @@ namespace MultiplayerARPG
             equipItems.forOwnerOnly = false;
             nonEquipItems.forOwnerOnly = true;
             summons.forOwnerOnly = true;
-        }
 
-        public override void OnSetup()
-        {
-            base.OnSetup();
             // On data changed events
-            id.onChange += OnIdChange;
             syncTitle.onChange += OnCharacterNameChange;
+            id.onChange += OnIdChange;
             level.onChange += OnLevelChange;
             exp.onChange += OnExpChange;
             isInvincible.onChange += OnIsInvincibleChange;
