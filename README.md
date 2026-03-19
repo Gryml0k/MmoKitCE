@@ -1,35 +1,63 @@
+# MmoKitCE – Scale, stay stable, and remain secure. By design.
+
 ![image](MmoKitCE.png)
 
-**MmoKitCE** is an _opinonated_ community edition distribution of [MMORPG Kit](https://github.com/suriyun-mmorpg/UnityMultiplayerARPG_Core). Kit developer Ittipon Teerapruettikulchai ([insthync](https://github.com/insthync)) open sourced his work after removing the asset from the Unity store, and we former customers are eternally grateful for this generosity. CE will continue to pull improvements and fixes from his core repos into this distribution.
+**MmoKitCE** is an _opinonated_ community edition distribution of [MMORPG Kit](https://github.com/suriyun-mmorpg/UnityMultiplayerARPG_Core). After the original asset was removed from the Unity Asset Store, Ittipon Teerapruettikulchai ([insthync](https://github.com/insthync)) open sourced his work. MmoKitCE exists to preserve, improve, and evolve this foundation, and will continue to pull improvements and fixes from his core repos into this distribution where it makes sense.
 
-The guiding principle behind CE are the three "S"es, and any changes from the core repos will be towards these goals:
+### Guiding Principles: The Three S's
 
-- Scalability
-- Stability
-- Security
+Every change, fix, or removal in MmoKitCE is evaluated strictly against these core goals:
 
-No other feature requests or enhancements will be considered unless it moves CE closer toward these goals. In fact, core functionality may be _removed_ if it helps improve in these regards.
+- **Scalability**: Can the system handle hundreds or thousands of concurrent players?
+- **Stability**: Does it reduce bugs, crashes, edge cases, and unexpected behavior?
+- **Security**: Does it harden the codebase against exploits, cheating, and data leaks?
 
-## Installing MmoKitCE
+**No other feature requests or enhancements** are considered unless they demonstrably advance one or more of these three goals.  
+In fact, non-essential or problematic features may be **removed** or **moved to addons** if doing so improves any of the three S's.
 
-The preferred method of installing CE is with a git subrepo within your project Assets directory.
+## What's New in CE
+
+### Addon Manager
+One of the biggest changes in the Community Edition is the introduction of the **Addon Manager**, an in-editor interface that allows the community and team to modularize functionality.
+
+- Former "core" features that were too niche, experimental, or optional can be extracted into addons.
+- Addons are discovered, installed, updated, and managed directly inside Unity, similar to a private Unity Package Manager.
+- This keeps the **core distribution lean**, focused, and easier to maintain long-term.
+- The Addon Manager pulls from a central, curated manifest (similar in spirit to how many modern Unity ecosystems work).
+
+## Quick Start / Installation Wizard
+
+1. **Install dependencies**
+
+Open Window → **Package Manager** and click **Add package from git URL**
+```
+https://github.com/denariigames/MmoKitCE_Installer?path=com.mmokitce.installer
+```
+
+2. **Apply recommended project settings**
+
+A setup wizard will appear automatically after the package is installed. Click **Import Settings** to install base project settings. The following settings will be overwritten by this process:
+
+ - ProjectSettings/DynamicsManager.asset
+ - ProjectSettings/InputManager.asset
+ - ProjectSettings/Physics2DManager.asset
+ - ProjectSettings/ProjectSettings.asset
+ - ProjectSettings/QualitySettings.asset
+ - ProjectSettings/TagManager.asset
+ - ProjectSettings/TimeManager.asset
+
+The original Kit had additional settings which were not included in CE: AudioManager, EditorBuildSettings, EditorSettings, GraphicSettings, ShaderGraphSettings, UnityConnectSettings, VersionControlSettings
+
+3. **Clone git repo**
+
+The preferred method of installing CE is with a git subrepo within your project Assets directory. 
 
 ```sh
 $ cd <your project>/Assets
 $ git clone https://github.com/denariigames/MmoKitCE.git
 ```
 
-CE includes a MmoKitCE_Settings.unitypackage which will install base project settings. After your project is up and running, you can safely delete this file. The following settings will be overwritten by this process:
-
-- ProjectSettings/DynamicsManager.asset
-- ProjectSettings/InputManager.asset
-- ProjectSettings/Physics2DManager.asset
-- ProjectSettings/ProjectSettings.asset
-- ProjectSettings/QualitySettings.asset
-- ProjectSettings/TagManager.asset
-- ProjectSettings/TimeManager.asset
-
-The original Kit had additional settings which were not included in CE: AudioManager, EditorBuildSettings, EditorSettings, GraphicSettings, ShaderGraphSettings, UnityConnectSettings, VersionControlSettings
+After installation, browse available addons via the Addon Manager window (Window → MMORPG Kit → MmoKitCE → **Addon Manager**). Have fun building!
 
 ## Updating MmoKitCE
 
@@ -95,3 +123,7 @@ $ git rm --cached -r . 2>/dev/null || true
 $ git add .
 $ git commit -m"core upstream"
 ```
+
+## Thanks
+
+Huge thanks to Ittipon Teerapruettikulchai for open sourcing the original kit. Without this act of generosity, none of this would exist. Special thanks to the entire community of former customers and new developers who continue to keep this ecosystem alive.
