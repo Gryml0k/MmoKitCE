@@ -1,10 +1,10 @@
-# MmoKitCE – Scale, stay stable, and remain secure. By design.
+# MmoKitCE: A Unity MMO framework designed to scale, stay stable, and remain secure
 
 ![image](MmoKitCE.png)
 
 **MmoKitCE** is an _opinonated_ community edition distribution of [MMORPG Kit](https://github.com/suriyun-mmorpg/UnityMultiplayerARPG_Core). After the original asset was removed from the Unity Asset Store, Ittipon Teerapruettikulchai ([insthync](https://github.com/insthync)) open sourced his work. MmoKitCE exists to preserve, improve, and evolve this foundation, and will continue to pull improvements and fixes from his core repos into this distribution where it makes sense.
 
-### Guiding Principles: The Three S's
+### The Three S's Guiding Principle
 
 Every change, fix, or removal in MmoKitCE is evaluated strictly against these core goals:
 
