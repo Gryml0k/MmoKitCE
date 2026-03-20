@@ -12,7 +12,7 @@ using UnityEngine.Networking;
 using System;
 using System.Collections.Generic;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
     public partial class AddonManagerWindow
     {

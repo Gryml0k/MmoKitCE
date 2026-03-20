@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
 	public partial class AddonManagerWindow
 	{

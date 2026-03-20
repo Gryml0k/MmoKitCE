@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.IO;
 using UnityEngine.Networking;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
 	public static class AddonInstallState
 	{

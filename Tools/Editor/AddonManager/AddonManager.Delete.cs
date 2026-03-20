@@ -9,7 +9,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
     public partial class AddonManagerWindow
     {

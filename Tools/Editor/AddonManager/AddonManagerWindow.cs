@@ -9,7 +9,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
 	public static class Constants
 	{

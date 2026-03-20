@@ -11,7 +11,7 @@ using UnityEditor;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace MmoKtCE.AddonManager
+namespace MmoKitCE.AddonManager
 {
     public partial class AddonManagerWindow
 	{
