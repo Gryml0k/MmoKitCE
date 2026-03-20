@@ -12,8 +12,7 @@ Every change, fix, or removal in MmoKitCE is evaluated strictly against these co
 - **Stability**: Does it reduce bugs, crashes, edge cases, and unexpected behavior?
 - **Security**: Does it harden the codebase against exploits, cheating, and data leaks?
 
-**No other feature requests or enhancements** are considered unless they demonstrably advance one or more of these three goals.  
-In fact, non-essential or problematic features may be **removed** or **moved to addons** if doing so improves any of the three S's.
+**No other feature requests or enhancements** are considered unless they demonstrably advance one or more of these three goals. In fact, non-essential or problematic features may be **removed** or **moved to addons** if doing so improves any of the three S's.
 
 ## What's New in CE
 
