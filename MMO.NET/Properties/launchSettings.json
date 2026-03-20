@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "UnityMultiplayerARPG_MMO.NET": {
-      "commandName": "Project",
-      "commandLineArgs": "-startCentralServer -startMapSpawnServer -startDatabaseServer"
-    }
-  }
-}
