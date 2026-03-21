@@ -541,10 +541,13 @@ namespace MultiplayerARPG
             for (int i = entities.Count - 1; i >= 0; --i)
             {
                 T entity = entities[i];
-                if (entity == null || !entity.gameObject.activeInHierarchy)
+                // ReferenceEquals avoids Unity's overloaded == which can behave
+                // unexpectedly on destroyed objects during HashSet operations.
+                if (ReferenceEquals(entity, null) || entity == null || !entity.gameObject.activeInHierarchy)
                 {
+                    if (!ReferenceEquals(entity, null))
+                        entitiesSet.Remove(entity);
                     entities.RemoveAt(i);
-                    entitiesSet.Remove(entity);
                     hasUpdate = true;
                 }
             }
@@ -558,11 +561,13 @@ namespace MultiplayerARPG
             for (int i = entities.Count - 1; i >= 0; --i)
             {
                 T entity = entities[i];
-                if (entity == null || (entity is Object unityObj && unityObj == null) ||
+                bool isTrulyNull = ReferenceEquals(entity, null);
+                if (isTrulyNull || entity == null || (entity is Object unityObj && unityObj == null) ||
                     !entity.EntityGameObject.activeInHierarchy)
                 {
+                    if (!isTrulyNull)
+                        entitiesSet.Remove(entity);
                     entities.RemoveAt(i);
-                    entitiesSet.Remove(entity);
                     hasUpdate = true;
                 }
             }
