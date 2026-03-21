@@ -1,3 +1,5 @@
+// CE scalability: #12
+
 using LiteNetLibManager;
 using System.Buffers;
 using System.Collections.Generic;
