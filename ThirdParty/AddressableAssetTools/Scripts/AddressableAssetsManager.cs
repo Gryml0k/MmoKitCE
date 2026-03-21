@@ -385,11 +385,11 @@ namespace Insthync.AddressableAssetTools
             return results.ToArray();
         }
 
-        public static async UniTask InstantiateObjectsOrUsePrefabs(this AssetReference[] addressablePrefabs, GameObject[] prefabs, Transform transform)
+        public static async UniTask InstantiateObjectsOrUsePrefabs(this AssetReference[] addressablePrefabs, GameObject[] prefabs, Transform transform, List<GameObject> instantiatedObjects = null)
         {
             if ((prefabs == null || prefabs.Length <= 0) && addressablePrefabs != null && addressablePrefabs.Length > 0)
             {
-                List<UniTask> instantiateTasks = new List<UniTask>();
+                List<UniTask<GameObject>> instantiateTasks = new List<UniTask<GameObject>>();
                 foreach (AssetReference addressablePrefab in addressablePrefabs)
                 {
                     if (!addressablePrefab.IsDataValid())
@@ -397,22 +397,34 @@ namespace Insthync.AddressableAssetTools
                     instantiateTasks.Add(Addressables.InstantiateAsync(addressablePrefab.RuntimeKey, transform.position, transform.rotation, transform, true).ToUniTask());
                 }
                 await UniTask.WhenAll(instantiateTasks);
+                if (instantiatedObjects != null)
+                {
+                    foreach (UniTask<GameObject> task in instantiateTasks)
+                    {
+                        if (task.Status != UniTaskStatus.Succeeded)
+                            continue;
+                        instantiatedObjects.Add(task.GetAwaiter().GetResult());
+                    }
+                }
+                return;
             }
             if (prefabs != null && prefabs.Length > 0)
             {
                 foreach (GameObject prefab in prefabs)
                 {
                     if (prefab == null) continue;
-                    Object.Instantiate(prefab, transform.position, transform.rotation, transform);
+                    GameObject instantiatedObject = Object.Instantiate(prefab, transform.position, transform.rotation, transform);
+                    if (instantiatedObjects != null && instantiatedObject != null)
+                        instantiatedObjects.Add(instantiatedObject);
                 }
             }
         }
 
-        public static async UniTask InstantiateObjectsOrUsePrefabs(this AssetReference[] addressablePrefabs, GameObject[] prefabs, Vector3 position, Quaternion rotation, Transform transform = null)
+        public static async UniTask InstantiateObjectsOrUsePrefabs(this AssetReference[] addressablePrefabs, GameObject[] prefabs, Vector3 position, Quaternion rotation, Transform transform = null, List<GameObject> instantiatedObjects = null)
         {
             if ((prefabs == null || prefabs.Length <= 0) && addressablePrefabs != null && addressablePrefabs.Length > 0)
             {
-                List<UniTask> instantiateTasks = new List<UniTask>();
+                List<UniTask<GameObject>> instantiateTasks = new List<UniTask<GameObject>>();
                 foreach (AssetReference addressablePrefab in addressablePrefabs)
                 {
                     if (!addressablePrefab.IsDataValid())
@@ -420,16 +432,29 @@ namespace Insthync.AddressableAssetTools
                     instantiateTasks.Add(Addressables.InstantiateAsync(addressablePrefab.RuntimeKey, position, rotation, transform, true).ToUniTask());
                 }
                 await UniTask.WhenAll(instantiateTasks);
+                if (instantiatedObjects != null)
+                {
+                    foreach (UniTask<GameObject> task in instantiateTasks)
+                    {
+                        if (task.Status != UniTaskStatus.Succeeded)
+                            continue;
+                        instantiatedObjects.Add(task.GetAwaiter().GetResult());
+                    }
+                }
+                return;
             }
             if (prefabs != null && prefabs.Length > 0)
             {
                 foreach (GameObject prefab in prefabs)
                 {
                     if (prefab == null) continue;
+                    GameObject instantiatedObject;
                     if (transform == null)
-                        Object.Instantiate(prefab, position, rotation);
+                        instantiatedObject = Object.Instantiate(prefab, position, rotation);
                     else
-                        Object.Instantiate(prefab, position, rotation, transform);
+                        instantiatedObject = Object.Instantiate(prefab, position, rotation, transform);
+                    if (instantiatedObjects != null && instantiatedObject != null)
+                        instantiatedObjects.Add(instantiatedObject);
                 }
             }
         }
