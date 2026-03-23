@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using LiteNetLib;
 using LiteNetLib.Utils;
 using LiteNetLibManager;
 using System.Collections.Generic;
@@ -118,8 +117,6 @@ namespace MultiplayerARPG
         public bool IsAirborne { get; private set; } = false;
         public bool IsUnderWater { get; private set; } = false;
         public bool IsClimbing { get; private set; } = false;
-
-        private LogicUpdater _logicUpdater;
 
         // Input codes
         private bool _isJumping;
