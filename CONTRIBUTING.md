@@ -1,5 +1,7 @@
 # Contributing to MmoKitCE
 
+The master branch will always reflect the latest release, while development for the next release is queued in the develop branch. **You should create your own feature branch and pull request into develop.** All changes to develop and master (on release) branches requires a pull request.
+
 1. **Start with an Issue**. Give a sensible name so that when a feature branch is created, you can tell what the branch is about.
 
 2. Tag the issue with a label like scability, security or stability.
@@ -10,8 +12,6 @@
 
 4. Under Development, click **Create a branch** and base it off of **develop**.
 <img width="400" height="194" alt="image" src="https://github.com/user-attachments/assets/16bf6ede-48be-4ee5-91a5-5adf439f24d0" />
-
-The master branch will always reflect the latest release, while development for the next release is queued in the develop branch. **You should create your own feature branch and pull request into develop.** All changes to develop and master (on release) branches requires a pull request.
 
 
 ### CE Structure
