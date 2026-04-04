@@ -4,6 +4,10 @@ namespace MultiplayerARPG.MMO
 {
     public partial class ServerConfig
     {
+        // Login server
+        public string LoginAddress;
+        public int? LoginPort;
+
         // Central server
         public string centralAddress;
         public int? centralPort;
