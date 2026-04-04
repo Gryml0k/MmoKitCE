@@ -1,0 +1,1 @@
+Assets in the Resources/ThemeUI directory are automatically discovered by ThemeManager. You can add you own assets outside of the addon by using this directory naming.
