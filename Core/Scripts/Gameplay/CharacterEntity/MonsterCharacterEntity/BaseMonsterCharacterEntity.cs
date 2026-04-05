@@ -1,4 +1,4 @@
-﻿using Cysharp.Text;
+using Cysharp.Text;
 using Cysharp.Threading.Tasks;
 using Insthync.AddressableAssetTools;
 using Insthync.UnityEditorUtils;
@@ -236,6 +236,17 @@ namespace MultiplayerARPG
             {
                 InitStats();
                 Id = GetId();
+            }
+
+            if (bandwidthOptimizeFromSpawnArea && SummonType == SummonType.None)
+            {
+                LiteNetLibTransform lnt = GetComponent<LiteNetLibTransform>();
+                if (lnt != null)
+                {
+                    lnt.positionThreshold = Mathf.Max(lnt.positionThreshold, 0.06f);
+                    lnt.eulerAnglesThreshold = Mathf.Max(lnt.eulerAnglesThreshold, 2.5f);
+                    lnt.keepAliveTicks = Mathf.Min(lnt.keepAliveTicks, 6);
+                }
             }
         }
 

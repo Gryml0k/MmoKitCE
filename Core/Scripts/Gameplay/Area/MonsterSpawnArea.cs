@@ -1,4 +1,4 @@
-﻿using Insthync.AddressableAssetTools;
+using Insthync.AddressableAssetTools;
 using Insthync.UnityEditorUtils;
 using LiteNetLibManager;
 using UnityEngine;
@@ -10,6 +10,12 @@ namespace MultiplayerARPG
 {
     public class MonsterSpawnArea : GameSpawnArea<BaseMonsterCharacterEntity>
     {
+        [Header("Network bandwidth")]
+        [Tooltip("When true, spawned monsters skip syncing low-value fields (exp, stamina, food, water) and use slightly looser LiteNetLibTransform thresholds.")]
+        public bool optimizeSpawnedMonsterBandwidth = true;
+        [Tooltip("When > 0, sets LiteNetLibIdentity.VisibleRange on spawned monsters so AOI subscribes only nearby players (uses interest manager default when 0).")]
+        public float monsterSubscriberVisibleRange;
+
         [Tooltip("This is deprecated, might be removed in future version, set your asset to `Asset` instead.")]
         [ReadOnlyField]
         public BaseMonsterCharacterEntity monsterCharacterEntity;
@@ -134,6 +140,9 @@ namespace MultiplayerARPG
             entity.Faction = faction;
             entity.Teleport(spawnPosition, spawnRotation, false);
             entity.InitStats();
+            entity.bandwidthOptimizeFromSpawnArea = optimizeSpawnedMonsterBandwidth;
+            if (monsterSubscriberVisibleRange > 0f)
+                spawnObj.VisibleRange = monsterSubscriberVisibleRange;
             BaseGameNetworkManager.Singleton.Assets.NetworkSpawn(spawnObj);
             entity.CallRpcOnSpawned();
             return entity;

@@ -11,6 +11,7 @@ namespace MultiplayerARPG
             // Cache LiteNetLibBehaviour
             LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(PlayerCharacterEntity));
             LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(MonsterCharacterEntity));
+            LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(MonsterSwarmNetworkIdentity));
             LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(NpcEntity));
             LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(HarvestableEntity));
             LiteNetLibBehaviour.CacheElementsAndRpcs(typeof(CurrencyDropEntity));
