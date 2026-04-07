@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// CE security: #31
+
+using System.Collections.Generic;
 using Insthync.DevExtension;
 using LiteNetLib;
 using LiteNetLib.Utils;

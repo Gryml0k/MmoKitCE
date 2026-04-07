@@ -1,3 +1,5 @@
+// CE security: #31
+
 using LiteNetLib;
 using LiteNetLib.Utils;
 using System.Collections.Generic;

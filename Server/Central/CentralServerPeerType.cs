@@ -1,4 +1,6 @@
-﻿namespace MultiplayerARPG.MMO
+﻿// CE security: #31
+
+namespace MultiplayerARPG.MMO
 {
     public enum CentralServerPeerType : byte
     {

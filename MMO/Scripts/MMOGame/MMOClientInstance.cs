@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// CE security: #31
+
+using UnityEngine;
 using LiteNetLib;
 using LiteNetLib.Utils;
 using LiteNetLibManager;

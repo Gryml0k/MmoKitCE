@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿// CE security: #31
+
+using Cysharp.Threading.Tasks;
 using LiteNetLib;
 using LiteNetLib.Utils;
 using LiteNetLibManager;
