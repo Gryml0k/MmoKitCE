@@ -355,7 +355,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 995324007292437533, guid: 14baaab909e926342894c511f78936b1, type: 3}
       propertyPath: m_Name
-      value: HueUIScrollbar
+      value: ThemeUIScrollbar
       objectReference: {fileID: 0}
     - target: {fileID: 995324007292437533, guid: 14baaab909e926342894c511f78936b1, type: 3}
       propertyPath: m_IsActive

@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 345089445380977219, guid: 808ddfbf0eb4bbe49aec45b2013f1929, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278242559
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1045441706250451217, guid: 808ddfbf0eb4bbe49aec45b2013f1929, type: 3}
       propertyPath: m_Pivot.x
@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1521813428454444905, guid: 808ddfbf0eb4bbe49aec45b2013f1929, type: 3}
       propertyPath: m_Name
-      value: HueUITitle
+      value: ThemeUITitle
       objectReference: {fileID: 0}
     - target: {fileID: 4547148041262509696, guid: 808ddfbf0eb4bbe49aec45b2013f1929, type: 3}
       propertyPath: overrideTheme
@@ -486,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017855379357296833, guid: 1b181674dabac23469f7f7a093e08dc9, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278242559
+      value: 4280700014
       objectReference: {fileID: 0}
     - target: {fileID: 6339690327817679716, guid: 1b181674dabac23469f7f7a093e08dc9, type: 3}
       propertyPath: m_Name
-      value: HueUIButtonContainer
+      value: ThemeUIButtonContainer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

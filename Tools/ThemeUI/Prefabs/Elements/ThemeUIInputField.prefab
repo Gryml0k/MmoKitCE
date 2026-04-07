@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8022724384544300570}
   - component: {fileID: 9181795100506551952}
   - component: {fileID: 8835305868292939495}
+  - component: {fileID: 1901233878685892335}
   m_Layer: 5
   m_Name: ThemeUIInputField
   m_TagString: Untagged
@@ -211,6 +212,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputFieldWrapper
   unityInputField: {fileID: 0}
   textMeshInputField: {fileID: 9181795100506551952}
+--- !u!114 &1901233878685892335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22070125473689240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81161f6e0e3ee0748b9818e6302fc188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2099020087681630770
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Username
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

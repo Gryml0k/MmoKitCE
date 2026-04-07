@@ -45,6 +45,7 @@ namespace DenariiGames.ThemeUI
 		[Header("Buttons")]
 		[Range(50, 500)] public int buttonWidth = 200;
 		[Range(25, 100)] public int buttonHeight = 60;
+		[Range(25, 100)] public int buttonThinHeight = 54;
 		[Range(10, 120)] public int buttonFontSize = 36;
 		public Color32 buttonFontColor = new Color32(255, 255, 255, 255);
 		public Sprite buttonBackgroundImage;

@@ -36,7 +36,8 @@ namespace DenariiGames.ThemeUI
 	{
 		Default,
 		Primary,
-		Close
+		Thin,
+		Close,
 	}
 
 

@@ -90,7 +90,22 @@ namespace DenariiGames.ThemeUI
 			if (targetRect != null)
 			{
 				if (!overrideTheme && theme != null)
-					ApplyTransformWidthHeight(targetRect, (style == ButtonStyle.Close) ? theme.buttonCloseWidth : theme.buttonWidth, (style == ButtonStyle.Close) ? theme.buttonCloseHeight : theme.buttonHeight);
+				{
+					switch (style)
+					{
+						case ButtonStyle.Close:
+							ApplyTransformWidthHeight(targetRect, theme.buttonCloseWidth, theme.buttonCloseHeight);
+							break;
+
+						case ButtonStyle.Thin:
+							ApplyTransformWidthHeight(targetRect, theme.buttonWidth, theme.buttonThinHeight);
+							break;
+
+						default:
+							ApplyTransformWidthHeight(targetRect, theme.buttonWidth, theme.buttonHeight);
+							break;
+					}
+				}
 				else
 					ApplyTransformWidthHeight(targetRect, width, height);
 			}
