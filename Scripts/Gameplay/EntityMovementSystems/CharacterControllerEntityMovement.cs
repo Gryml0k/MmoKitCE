@@ -444,7 +444,9 @@ namespace MultiplayerARPG
 
         public void SetPosition(Vector3 position)
         {
+            CacheCharacterController.enabled = false;
             EntityTransform.position = position;
+            CacheCharacterController.enabled = true;
         }
 
         public Bounds GetMovementBounds()
