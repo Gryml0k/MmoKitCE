@@ -15,7 +15,7 @@ MonoBehaviour:
   headerPreset:
     namePreset: Canvas
     settings:
-      backgroundColor: {r: 0.58431375, g: 0.07058824, b: 0.6039216, a: 1}
+      backgroundColor: {r: 0.8301887, g: 0.38768244, b: 0.7401202, a: 1}
       fontColor: {r: 1, g: 1, b: 1, a: 1}
       textAlignment: 0
       fontStyle: 0

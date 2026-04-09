@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfb6b3e0a2f0a164b9e2c629f0bda84a, type: 3}
-  m_Name: Managers
+  m_Name: NPCs
   m_EditorClassIdentifier: 
   headerPreset:
-    namePreset: Menagers
+    namePreset: NPCs
     settings:
-      backgroundColor: {r: 0.002501011, g: 0, b: 1, a: 1}
+      backgroundColor: {r: 0.53449607, g: 0, b: 0.58431375, a: 1}
       fontColor: {r: 1, g: 1, b: 1, a: 1}
       textAlignment: 0
-      fontStyle: 3
+      fontStyle: 0
       uppercase: 0
