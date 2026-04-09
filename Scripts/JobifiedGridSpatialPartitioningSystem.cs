@@ -109,7 +109,7 @@ namespace Insthync.SpatialPartitioningSystems
                 return false;
             _jobHandle.Complete();
             _spatialObjects.Dispose();
-            _isScheduled = true;
+            _isScheduled = false;
             return true;
         }
 
