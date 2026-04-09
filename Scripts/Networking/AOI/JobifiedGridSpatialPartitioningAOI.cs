@@ -10,6 +10,7 @@ namespace MultiplayerARPG
     public class JobifiedGridSpatialPartitioningAOI : BaseInterestManager
     {
         protected static readonly ProfilerMarker s_UpdateProfilerMarker = new ProfilerMarker("JobifiedGridSpatialPartitioningAOI - Update");
+        protected static readonly ProfilerMarker s_CompleteProfilerMarker = new ProfilerMarker("JobifiedGridSpatialPartitioningAOI - Complete");
 
         public float cellSize = 64f;
         public int maxObjects = 10000;
@@ -158,6 +159,16 @@ namespace MultiplayerARPG
 
                 }
                 _system.UpdateGrid(_spatialObjects);
+            }
+        }
+
+        private void LateUpdate()
+        {
+            if (!_system.Complete())
+                return;
+
+            using (s_CompleteProfilerMarker.Auto())
+            {
                 _alwaysVisibleObjects.Clear();
                 NativeList<SpatialObject> queryResult;
                 HashSet<uint> subscribings;
@@ -220,7 +231,7 @@ namespace MultiplayerARPG
                     queryResult.Dispose();
                 }
 
-                players = Manager.GetPlayers();
+                var players = Manager.GetPlayers();
                 while (players.MoveNext())
                 {
                     LiteNetLibPlayer player = players.Current.Value;
