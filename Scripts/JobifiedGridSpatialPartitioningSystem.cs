@@ -21,6 +21,8 @@ namespace Insthync.SpatialPartitioningSystems
         private readonly bool _disableZAxis;
         private readonly float _cellSize;
         private readonly float3 _worldMin;
+        private bool _isScheduled = false;
+        private JobHandle _jobHandle;
 
         public JobifiedGridSpatialPartitioningSystem(Bounds bounds, float cellSize, int maxObjects, bool disableXAxis, bool disableYAxis, bool disableZAxis)
         {
@@ -58,6 +60,9 @@ namespace Insthync.SpatialPartitioningSystems
 
         public void UpdateGrid(List<SpatialObject> spatialObjects)
         {
+            if (_isScheduled)
+                return;
+
             // Convert to SpatialObjects
             _spatialObjects = new NativeArray<SpatialObject>(spatialObjects.Count, Allocator.TempJob);
 
@@ -94,9 +99,18 @@ namespace Insthync.SpatialPartitioningSystems
                 DisableZAxis = _disableZAxis
             };
 
-            var handle = updateJob.Schedule(_spatialObjects.Length, 64);
-            handle.Complete();
+            _jobHandle = updateJob.Schedule(_spatialObjects.Length, 64);
+            _isScheduled = true;
+        }
+
+        public bool Complete()
+        {
+            if (!_isScheduled)
+                return false;
+            _jobHandle.Complete();
             _spatialObjects.Dispose();
+            _isScheduled = true;
+            return true;
         }
 
         public NativeList<SpatialObject> QuerySphere(Vector3 position, float radius)
