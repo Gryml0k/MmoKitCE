@@ -1038,7 +1038,7 @@ namespace MultiplayerARPG
             }
             using (CollectionPool<List<Attribute>, Attribute>.Get(out List<Attribute> attributeKeys))
             {
-                resultAttributes.AddKeysToList(attributeKeys);
+                attributeKeys.AddRange(resultAttributes.Keys);
                 for (i = 0; i < attributeKeys.Count; ++i)
                 {
                     Attribute key = attributeKeys[i];
@@ -1072,7 +1072,7 @@ namespace MultiplayerARPG
             GameDataHelpers.CombineResistances(resultResistances, buffResistances);
             using (CollectionPool<List<DamageElement>, DamageElement>.Get(out List<DamageElement> resistanceKeys))
             {
-                resultResistances.AddKeysToList(resistanceKeys);
+                resistanceKeys.AddRange(resultResistances.Keys);
                 for (i = 0; i < resistanceKeys.Count; ++i)
                 {
                     DamageElement key = resistanceKeys[i];
@@ -1129,7 +1129,7 @@ namespace MultiplayerARPG
             GameDataHelpers.CombineStatusEffectResistances(resultStatusEffectResistances, buffStatusEffectResistances);
             using (CollectionPool<List<StatusEffect>, StatusEffect>.Get(out List<StatusEffect> statusEffectKeys))
             {
-                resultStatusEffectResistances.AddKeysToList(statusEffectKeys);
+                statusEffectKeys.AddRange(resultStatusEffectResistances.Keys);
                 for (i = 0; i < statusEffectKeys.Count; ++i)
                 {
                     StatusEffect key = statusEffectKeys[i];
