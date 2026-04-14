@@ -264,15 +264,8 @@ namespace MultiplayerARPG.MMO
                 });
                 return;
             }
-            // Kick player's character from map-servers
-            if (!await ClusterServer.ConfirmDespawnCharacter(userPeerInfo.userId))
-            {
-                result.InvokeError(new ResponseSelectCharacterMessage()
-                {
-                    message = UITextKeys.UI_ERROR_ALREADY_LOGGED_IN,
-                });
-                return;
-            }
+            string userId = userPeerInfo.userId;
+            string characterId = request.characterId;
             // Get channel, or use default one
             string channelId = request.channelId;
             if (string.IsNullOrEmpty(channelId))
@@ -282,6 +275,15 @@ namespace MultiplayerARPG.MMO
                 result.InvokeError(new ResponseSelectCharacterMessage()
                 {
                     message = UITextKeys.UI_ERROR_INVALID_CHANNEL_ID,
+                });
+                return;
+            }
+            // Kick player's character from map-servers
+            if (!await ClusterServer.ConfirmDespawnCharacter(userId, characterId, channelId))
+            {
+                result.InvokeError(new ResponseSelectCharacterMessage()
+                {
+                    message = UITextKeys.UI_ERROR_ALREADY_LOGGED_IN,
                 });
                 return;
             }
@@ -298,8 +300,8 @@ namespace MultiplayerARPG.MMO
             }
             DatabaseApiResult<CharacterResp> characterResp = await DatabaseClient.GetCharacterAsync(new GetCharacterReq()
             {
-                UserId = userPeerInfo.userId,
-                CharacterId = request.characterId,
+                UserId = userId,
+                CharacterId = characterId,
                 ForceClearCache = true,
             });
             if (!characterResp.IsSuccess)
