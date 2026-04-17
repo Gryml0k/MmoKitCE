@@ -200,7 +200,7 @@ namespace MultiplayerARPG
                 }
                 _system.UpdateGrid(_spatialObjects);
                 _alwaysVisibleObjects.Clear();
-                NativeList<SpatialObject> queryResult;
+                NativeList<SpatialObject> queryResults;
                 HashSet<uint> subscribings;
                 LiteNetLibIdentity foundPlayerObject;
                 foreach (LiteNetLibIdentity spawnedObject in Manager.Assets.GetSpawnedObjects())
@@ -212,10 +212,11 @@ namespace MultiplayerARPG
                         _alwaysVisibleObjects.Add(spawnedObject.ObjectId);
                         continue;
                     }
-                    queryResult = _system.QuerySphere(spawnedObject.transform.position, GetVisibleRange(spawnedObject));
-                    for (int i = 0; i < queryResult.Length; ++i)
+                    _system.QuerySphere(spawnedObject.transform.position, GetVisibleRange(spawnedObject));
+                    queryResults = _system.QueryResults;
+                    for (int i = 0; i < queryResults.Length; ++i)
                     {
-                        uint contactedObjectId = queryResult[i].objectId;
+                        uint contactedObjectId = queryResults[i].objectId;
                         if (!Manager.Assets.TryGetSpawnedObject(contactedObjectId, out foundPlayerObject))
                         {
                             continue;
@@ -229,7 +230,6 @@ namespace MultiplayerARPG
                         subscribings.Add(spawnedObject.ObjectId);
                         _playerSubscribings[contactedObjectId] = subscribings;
                     }
-                    queryResult.Dispose();
                 }
 
                 foreach (ISpatialObjectComponent component in SpatialObjectContainer.GetValues())
@@ -242,19 +242,19 @@ namespace MultiplayerARPG
                     switch (component.SpatialObjectShape)
                     {
                         case SpatialObjectShape.Box:
-                            queryResult = _system.QueryBox(component.SpatialObjectPosition, component.SpatialObjectExtents);
+                            _system.QueryBox(component.SpatialObjectPosition, component.SpatialObjectExtents);
                             break;
                         default:
-                            queryResult = _system.QuerySphere(component.SpatialObjectPosition, component.SpatialObjectRadius);
+                            _system.QuerySphere(component.SpatialObjectPosition, component.SpatialObjectRadius);
                             break;
                     }
-                    for (int i = 0; i < queryResult.Length; ++i)
+                    queryResults = _system.QueryResults;
+                    for (int i = 0; i < queryResults.Length; ++i)
                     {
-                        uint contactedObjectId = queryResult[i].objectId;
+                        uint contactedObjectId = queryResults[i].objectId;
                         if (Manager.Assets.TryGetSpawnedObject(contactedObjectId, out foundPlayerObject))
                             component.AddSubscriber(foundPlayerObject.ObjectId);
                     }
-                    queryResult.Dispose();
                 }
 
                 foreach (LiteNetLibPlayer player in Manager.GetPlayers())
