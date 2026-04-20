@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8fe7dd2b49921a340898fed1f81a3063, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ce8f21da90bd9c44b425d3ad1695f66, type: 3}
     - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -421,6 +421,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 570590590867324671, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
@@ -454,6 +458,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f3dc2e166a423a4479e02cfb6aab22f1, type: 3}
+    - target: {fileID: 2807484754762909272, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5657410459070865918, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_Name
       value: ThemeUIItemTitle

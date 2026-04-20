@@ -32,12 +32,19 @@ namespace DenariiGames.ThemeUI
 		Card
 	}
 
+	public enum TextStyle
+	{
+		Default,
+		Large,
+	}
+
 	public enum ButtonStyle
 	{
 		Default,
 		Primary,
 		Thin,
 		Close,
+		Increase,
 	}
 
 

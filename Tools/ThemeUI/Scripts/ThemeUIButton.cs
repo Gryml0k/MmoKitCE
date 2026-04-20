@@ -101,6 +101,10 @@ namespace DenariiGames.ThemeUI
 							ApplyTransformWidthHeight(targetRect, theme.buttonWidth, theme.buttonThinHeight);
 							break;
 
+						case ButtonStyle.Increase:
+							ApplyTransformWidthHeight(targetRect, theme.buttonIncreaseWidth, theme.buttonIncreaseHeight);
+							break;
+
 						default:
 							ApplyTransformWidthHeight(targetRect, theme.buttonWidth, theme.buttonHeight);
 							break;

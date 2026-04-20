@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 114905048057881840}
   - component: {fileID: 114850303835821004}
   - component: {fileID: 6385480414812307336}
-  - component: {fileID: 222758252756596132}
-  - component: {fileID: 114492619560406836}
   - component: {fileID: 114197431758850790}
   - component: {fileID: 6338590579591719232}
   - component: {fileID: 5043362262483362656}
@@ -94,7 +92,8 @@ MonoBehaviour:
   onHideWithObject:
     m_PersistentCalls:
       m_Calls: []
-  objectSelected: {fileID: 4604924956500255618}
+  tutorial: {fileID: 0}
+  objectSelected: {fileID: 0}
   clones: []
   selectionManager: {fileID: 0}
   updateUIRepeatRate: 0.5
@@ -333,6 +332,7 @@ MonoBehaviour:
   onHideWithObject:
     m_PersistentCalls:
       m_Calls: []
+  tutorial: {fileID: 0}
   objectSelected: {fileID: 0}
   clones: []
   selectionManager: {fileID: 0}
@@ -382,6 +382,7 @@ MonoBehaviour:
   onHideWithObject:
     m_PersistentCalls:
       m_Calls: []
+  tutorial: {fileID: 0}
   objectSelected: {fileID: 0}
   clones: []
   selectionManager: {fileID: 0}
@@ -399,44 +400,6 @@ MonoBehaviour:
   uiTextTitle: {fileID: 0}
   uiTextDescription: {fileID: 0}
   imageIcon: {fileID: 6809901293601170321}
---- !u!222 &222758252756596132
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897757497281926}
-  m_CullTransparentMesh: 0
---- !u!114 &114492619560406836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897757497281926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &114197431758850790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,10 +421,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.70980394, g: 0.48627454, b: 0.25490198, a: 1}
+    m_HighlightedColor: {r: 0.46274513, g: 0.85098046, b: 0.26666668, a: 1}
+    m_PressedColor: {r: 0.38823533, g: 0.92549026, b: 0.11764707, a: 1}
+    m_SelectedColor: {r: 0.46274513, g: 0.85098046, b: 0.26666668, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -477,7 +440,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114492619560406836}
+  m_TargetGraphic: {fileID: 4500563063196193810}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -545,6 +508,7 @@ MonoBehaviour:
   onHideWithObject:
     m_PersistentCalls:
       m_Calls: []
+  tutorial: {fileID: 0}
   objectSelected: {fileID: 0}
   clones: []
   selectionManager: {fileID: 0}
@@ -790,9 +754,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ce8f21da90bd9c44b425d3ad1695f66, type: 3}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 570590590867324671, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Name
-      value: HueUISelectedItem
+      value: ThemeUISelectedItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -804,11 +788,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 356221519047945907, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
   m_PrefabInstance: {fileID: 4038849011926752637}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4604924956500255618 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 570590590867324671, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+--- !u!114 &4500563063196193810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
   m_PrefabInstance: {fileID: 4038849011926752637}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4144301793634899947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,9 +807,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089086916944950104}
     m_Modifications:
+    - target: {fileID: 2807484754762909272, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5657410459070865918, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_Name
-      value: HueUIItemTitle-Name
+      value: ThemeUIItemTitle-Name
       objectReference: {fileID: 0}
     - target: {fileID: 6133795111439587206, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_Pivot.x
@@ -932,11 +926,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 895629629523021877, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_Name
-      value: HueUIText-Class
+      value: ThemeUIText-Class
       objectReference: {fileID: 0}
     - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_text
       value: Class
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -968,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1004,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1075,11 +1077,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 895629629523021877, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_Name
-      value: HueUIText-Level
+      value: ThemeUIText-Level
       objectReference: {fileID: 0}
     - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_text
       value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1111,7 +1121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1147,11 +1157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59.52
+      value: -55.05
       objectReference: {fileID: 0}
     - target: {fileID: 5789208356385274607, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

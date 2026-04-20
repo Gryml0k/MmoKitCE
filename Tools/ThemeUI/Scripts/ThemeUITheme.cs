@@ -12,6 +12,12 @@ namespace DenariiGames.ThemeUI
 		public Color32 fontColor = new Color32(239, 239, 239, 255);
     	public TMP_FontAsset fontAsset;
 
+		[Header("Text Large")]
+		[Range(10, 120)] public int fontLargeSize = 64;
+    	public TMP_FontAsset fontLargeAsset;
+
+		[Header("Text Dark")]
+
 		[Space(20)]
 		[Header("Title")]
 		[Range(10, 200)] public int titleHeight = 50;
@@ -63,6 +69,10 @@ namespace DenariiGames.ThemeUI
 		public Sprite buttonCloseImage;
 		public float buttonClosePixelsPerUnitMultiplier = 0.5f;
 		public Color buttonCloseColor = new Color(0.25f, 0.25f, 0.25f, 1f);
+		[Header("Increase Button")]
+		[Range(20, 200)] public int buttonIncreaseWidth = 60;
+		[Range(20, 200)] public int buttonIncreaseHeight = 60;
+
 
 		[Space(20)]
 		[Header("Panels")]

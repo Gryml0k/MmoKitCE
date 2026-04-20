@@ -8,6 +8,7 @@ namespace DenariiGames.ThemeUI
 	public class ThemeUITextEditor : Editor
 	{
 		private SerializedProperty overrideProp;
+		private SerializedProperty styleProp;
 		private SerializedProperty fontSizeProp;
 		private SerializedProperty fontColorProp;
 		private SerializedProperty fontAssetProp;
@@ -15,6 +16,7 @@ namespace DenariiGames.ThemeUI
 		private void OnEnable()
 		{
 			overrideProp = serializedObject.FindProperty("overrideTheme");
+			styleProp = serializedObject.FindProperty("style");
 			fontSizeProp = serializedObject.FindProperty("fontSize");
 			fontColorProp = serializedObject.FindProperty("fontColor");
 			fontAssetProp = serializedObject.FindProperty("fontAsset");
@@ -25,6 +27,7 @@ namespace DenariiGames.ThemeUI
 			serializedObject.Update();
 			EditorGUI.BeginChangeCheck();
 
+			EditorGUILayout.PropertyField(styleProp, new GUIContent("Style"));
 			EditorGUILayout.PropertyField(overrideProp, new GUIContent("Override Theme"));
 			if (overrideProp.boolValue)
 			{

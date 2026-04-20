@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfb6b3e0a2f0a164b9e2c629f0bda84a, type: 3}
+  m_Script: {fileID: 11500000, guid: a3e14b9f42195b04e8876adce6d60678, type: 3}
   m_Name: Spawners
   m_EditorClassIdentifier: 
   headerPreset:
     namePreset: Spawners
     settings:
-      backgroundColor: {r: 0, g: 0.5849056, b: 0.21276262, a: 1}
+      backgroundColor: {r: 0, g: 0.4245283, b: 0.02086708, a: 1}
       fontColor: {r: 1, g: 1, b: 1, a: 1}
       textAlignment: 0
-      fontStyle: 0
+      fontStyle: 1
       uppercase: 0

@@ -114,6 +114,11 @@ namespace DenariiGames.ThemeUI
 				EditorGUI.indentLevel--;
 			}
 
+			if (EditorGUI.EndChangeCheck())
+			{
+				serializedObject.ApplyModifiedProperties();
+			}
+
 			serializedObject.ApplyModifiedProperties();
 
 			if (!Application.isPlaying && _target.StateMachine != null)

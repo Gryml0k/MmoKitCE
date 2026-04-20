@@ -17,6 +17,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4293914607
   fontAsset: {fileID: 0}
+  fontLargeSize: 64
+  fontLargeAsset: {fileID: 0}
   titleHeight: 60
   titleBackgroundImage: {fileID: 0}
   titlePixelsPerUnitMultiplier: 0.5
@@ -41,6 +43,7 @@ MonoBehaviour:
   selectedColor: {r: 0.5411765, g: 0.49019608, b: 0.20784314, a: 0.5}
   buttonWidth: 250
   buttonHeight: 60
+  buttonThinHeight: 54
   buttonFontSize: 30
   buttonFontColor:
     serializedVersion: 2
@@ -62,6 +65,8 @@ MonoBehaviour:
   buttonCloseImage: {fileID: 21300000, guid: f3dc2e166a423a4479e02cfb6aab22f1, type: 3}
   buttonClosePixelsPerUnitMultiplier: 0.5
   buttonCloseColor: {r: 0.43137258, g: 0.08627451, b: 0.050980397, a: 1}
+  buttonIncreaseWidth: 60
+  buttonIncreaseHeight: 60
   panelTopPadding: 30
   panelHorizontalPadding: 40
   panelBottomPadding: 20
@@ -69,9 +74,9 @@ MonoBehaviour:
   panelPixelsPerUnitMultiplier: 0.5
   panelBackgroundColor: {r: 0.105882354, g: 0.06666667, b: 0.06666667, a: 0.9019608}
   sidePanelWidth: 700
-  sidePanelOffset: 50
-  sidePanelTopOffset: 130
-  sidePanelBottomOffset: 50
+  sidePanelOffset: 25
+  sidePanelTopOffset: 25
+  sidePanelBottomOffset: 25
   centerPanelWidth: 600
   centerPanelHeight: 400
   centerPanelTopOffset: 40
@@ -113,6 +118,7 @@ MonoBehaviour:
   inputFieldColor: {r: 1, g: 1, b: 1, a: 1}
   toggleHeight: 40
   toggleWidth: 40
+  toggleLabelPadding: 10
   toggleImage: {fileID: 21300000, guid: a45e2406ecda2f04eb684c60c20c9180, type: 3}
   togglePixelsPerUnitMultiplier: 1
   toggleColor: {r: 1, g: 1, b: 1, a: 1}

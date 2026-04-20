@@ -12,6 +12,7 @@ namespace DenariiGames.ThemeUI
 	{
 #if UNITY_EDITOR
 		[SerializeField] private bool overrideTheme;
+		[SerializeField] private TextStyle style = TextStyle.Default;
 
 		[SerializeField] [Range(10, 120)] private int fontSize = 36;
 		[SerializeField] private Color32 fontColor = new Color32(255, 255, 255, 255);
@@ -41,19 +42,12 @@ namespace DenariiGames.ThemeUI
 			EditorApplication.delayCall -= ApplyStyles;
 			ThemeUITheme theme = ThemeUIThemeManager.CurrentTheme;
 
-			ContentSizeFitter fitter = GetComponent<ContentSizeFitter>();
-			if (fitter == null)
-			{
-				fitter = gameObject.AddComponent<ContentSizeFitter>();
-				fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-			}
-
 			if (tmpText != null)
 			{
 				if (!overrideTheme && theme != null)
 				{
-					ApplyFont(tmpText, theme.fontSize, theme.fontColor);
-					ApplyFontAsset(tmpText, theme.fontAsset);
+					ApplyFont(tmpText, style == TextStyle.Large ? theme.fontLargeSize : theme.fontSize, theme.fontColor);
+					ApplyFontAsset(tmpText, style == TextStyle.Large ? theme.fontLargeAsset : theme.fontAsset);
 				}
 				else
 				{

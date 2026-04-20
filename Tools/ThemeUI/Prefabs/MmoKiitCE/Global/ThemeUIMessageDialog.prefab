@@ -199,6 +199,14 @@ PrefabInstance:
       value: Description
       objectReference: {fileID: 0}
     - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 942285873142114573, guid: deab37c5841dcbd489e440fc6e268145, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4293914607
       objectReference: {fileID: 0}
@@ -511,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor.b
@@ -527,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -744,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor.b
@@ -760,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -969,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor.b
@@ -985,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5902012157044841727, guid: eb5fc597df61c3e4494bc04a2ee34d29, type: 3}
       propertyPath: m_fontColor32.rgba

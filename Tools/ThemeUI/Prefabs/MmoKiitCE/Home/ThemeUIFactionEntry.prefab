@@ -85,8 +85,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224030164641174348}
   - component: {fileID: 114128872707625210}
-  - component: {fileID: 222553331157051472}
-  - component: {fileID: 114389375851434782}
   - component: {fileID: 114727215915082910}
   - component: {fileID: 1179107054107241619}
   m_Layer: 5
@@ -145,7 +143,8 @@ MonoBehaviour:
   onHideWithObject:
     m_PersistentCalls:
       m_Calls: []
-  objectSelected: {fileID: 1665382611674702}
+  tutorial: {fileID: 0}
+  objectSelected: {fileID: 0}
   clones: []
   selectionManager: {fileID: 0}
   updateUIRepeatRate: 0.5
@@ -162,44 +161,6 @@ MonoBehaviour:
   uiTextTitle: {fileID: 2032901838759118612}
   uiTextDescription: {fileID: 0}
   imageIcon: {fileID: 114702578662464852}
---- !u!222 &222553331157051472
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803012547843412}
-  m_CullTransparentMesh: 0
---- !u!114 &114389375851434782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803012547843412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &114727215915082910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,10 +182,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.70980394, g: 0.48627454, b: 0.25490198, a: 1}
+    m_HighlightedColor: {r: 0.46274513, g: 0.85098046, b: 0.26666668, a: 1}
+    m_PressedColor: {r: 0.38823533, g: 0.92549026, b: 0.11764707, a: 1}
+    m_SelectedColor: {r: 0.46274513, g: 0.85098046, b: 0.26666668, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -240,7 +201,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114389375851434782}
+  m_TargetGraphic: {fileID: 114602317288903134}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -370,6 +331,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ce8f21da90bd9c44b425d3ad1695f66, type: 3}
+    - target: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -391,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 570590590867324671, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: m_Name
-      value: HueUISelectedItem
+      value: ThemeUISelectedItem
       objectReference: {fileID: 0}
     - target: {fileID: 6906397877703635901, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
       propertyPath: color.b
@@ -418,11 +383,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
---- !u!1 &1665382611674702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 570590590867324671, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
+--- !u!114 &114602317288903134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 466660797579872623, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
   m_PrefabInstance: {fileID: 571622585765746865}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &224971224518473218 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 356221519047945907, guid: a44aad5b761e98f488ed2456f57d2548, type: 3}
@@ -440,13 +411,17 @@ PrefabInstance:
       propertyPath: center
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807484754762909272, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4446975401170211618, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: height
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5657410459070865918, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_Name
-      value: HueUIItemTitle
+      value: ThemeUIItemTitle
       objectReference: {fileID: 0}
     - target: {fileID: 6133795111439587206, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_Pivot.x
@@ -514,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6133795111439587206, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6133795111439587206, guid: c3759923a168f8a45ab1e75940acf13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
