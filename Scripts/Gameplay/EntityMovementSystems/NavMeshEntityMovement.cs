@@ -424,13 +424,13 @@ namespace MultiplayerARPG
                 if (CacheNavMeshAgent.velocity.magnitude > MIN_MAGNITUDE_TO_DETERMINE_MOVING)
                 {
                     MovementState = _acceptedMovementStateBeforeStopped;
-                    ExtraMovementState = _acceptedExtraMovementStateBeforeStopped;
                 }
                 else
                 {
                     MovementState = MovementState.IsGrounded;
-                    ExtraMovementState = ExtraMovementState.None;
                 }
+                // Always use server's ExtraMovementState for remote clients to preserve crawl/etc. state
+                ExtraMovementState = _acceptedExtraMovementStateBeforeStopped;
             }
 
             if (replaceMovementForceApplierMode == ApplyMovementForceMode.Dash)
