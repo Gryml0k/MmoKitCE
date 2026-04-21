@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ab266fc19175a7d4da474f441e78fbf7
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Shaders/ProjectorAdditiveTint.shader
+  uploadId: 857340
