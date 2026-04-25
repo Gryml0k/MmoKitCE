@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 7a69b96f66966f8498022e1b814b7b72, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1808cf8134d768f4985cde8fe0f80fb1, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a888d112eafd61c4681f7095b2035eae, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -170,6 +170,18 @@ PrefabInstance:
     - target: {fileID: 4009622383931608, guid: d2c274d504629844ba9d4993edf72817, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817, type: 3}
+      propertyPath: dbName
+      value: wildmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817, type: 3}
+      propertyPath: password
+      value: Yendi1984
+      objectReference: {fileID: 0}
+    - target: {fileID: 114788248445432888, guid: d2c274d504629844ba9d4993edf72817, type: 3}
+      propertyPath: overrideExePath
+      value: C:\Projects\KitCE\\builds\MmoKitCE.exe
       objectReference: {fileID: 0}
     - target: {fileID: 114946005600446132, guid: d2c274d504629844ba9d4993edf72817, type: 3}
       propertyPath: mapNetworkManager
