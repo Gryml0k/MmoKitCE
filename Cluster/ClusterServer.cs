@@ -561,7 +561,7 @@ RequestProceedResultDelegate<ResponseChannelsMessage> result)
 #if (UNITY_EDITOR || UNITY_SERVER || !EXCLUDE_SERVER_CODES) && UNITY_STANDALONE
             bool despawned = true;
             if (!string.IsNullOrEmpty(request.userId))
-                despawned = await ConfirmDespawnCharacter(request.userId);
+                despawned = await ConfirmDespawnCharacter(request.userId, request.characterId, request.channelId);
 
             if (despawned)
                 result.InvokeSuccess(EmptyMessage.Value);
