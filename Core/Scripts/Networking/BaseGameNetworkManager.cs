@@ -1152,9 +1152,9 @@ namespace MultiplayerARPG
             if (InterestManager is JobifiedGridSpatialPartitioningAOI gridAOI)
             {
                 gridAOI.PrepareSystem();
-                if (gridAOI.IsSystemReady)
-                    Logging.Log(LogTag, "[AOI] Grid spatial partitioning system initialized successfully.");
-                else
+                //if (gridAOI.IsSystemReady)
+                //    Logging.Log(LogTag, "[AOI] Grid spatial partitioning system initialized successfully.");
+                //else
                     Logging.LogWarning(LogTag, "[AOI] Grid AOI system not initialized after PrepareSystem. " +
                         "Running in degraded fallback mode. Add AOIMapBounds to your scene.");
             }
