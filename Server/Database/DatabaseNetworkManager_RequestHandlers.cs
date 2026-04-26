@@ -140,6 +140,7 @@ namespace MultiplayerARPG.MMO
             }
             // Insert new character to database
             await Database.CreateCharacter(request.Data.UserId, character);
+            InvalidateCharactersByUserIdCache(request.Data.UserId);
             _insertingCharacterNames.TryRemove(character.CharacterName);
             result.InvokeSuccess(new CharacterResp()
             {
@@ -161,7 +162,21 @@ namespace MultiplayerARPG.MMO
         protected async UniTaskVoid GetCharacters(RequestHandlerData requestHandler, DbRequestMessage<GetCharactersReq> request, RequestProceedResultDelegate<CharactersResp> result)
         {
 #if NET || NETCOREAPP || ((UNITY_EDITOR || UNITY_SERVER || !EXCLUDE_SERVER_CODES) && UNITY_STANDALONE)
+            if (TryGetCharactersByUserIdFromCache(request.Data.UserId, out List<PlayerCharacterData> cachedCharacters))
+            {
+                result.InvokeSuccess(new CharactersResp()
+                {
+                    List = cachedCharacters
+                });
+                return;
+            }
+
             List<PlayerCharacterData> characters = await Database.GetCharacters(request.Data.UserId);
+            if (characters == null)
+                characters = new List<PlayerCharacterData>();
+
+            SetCharactersByUserIdCache(request.Data.UserId, characters);
+
             result.InvokeSuccess(new CharactersResp()
             {
                 List = characters
@@ -172,6 +187,22 @@ namespace MultiplayerARPG.MMO
         protected async UniTaskVoid UpdateCharacter(RequestHandlerData requestHandler, DbRequestMessage<UpdateCharacterReq> request, RequestProceedResultDelegate<CharacterResp> result)
         {
 #if NET || NETCOREAPP || ((UNITY_EDITOR || UNITY_SERVER || !EXCLUDE_SERVER_CODES) && UNITY_STANDALONE)
+            if (UseDeferredCharacterSaveScheduler)
+            {
+                await UniTask.WhenAll(
+                    DatabaseCache.SetPlayerCharacter(request.Data.CharacterData),
+                    DatabaseCache.SetSummonBuffs(request.Data.CharacterData.Id, request.Data.SummonBuffs));
+
+                EnqueueCharacterSave(request.Data, false);
+                UpsertCharacterInUserIdCache(request.Data.CharacterData);
+
+                result.InvokeSuccess(new CharacterResp()
+                {
+                    CharacterData = request.Data.CharacterData,
+                });
+                return;
+            }
+
             PlayerCharacterData playerCharacter = await GetCharacter(request.Data.CharacterData.Id);
             if (playerCharacter == null)
             {
@@ -179,14 +210,21 @@ namespace MultiplayerARPG.MMO
                 {
                     CharacterData = null,
                 });
+                return;
             }
-            await Database.UpdateCharacter(request.Data.State, request.Data.CharacterData, request.Data.SummonBuffs, request.Data.DeleteStorageReservation);
-            List<UniTask> tasks = new List<UniTask>
-            {
+
+            await Database.UpdateCharacter(
+                request.Data.State,
+                request.Data.CharacterData,
+                request.Data.SummonBuffs,
+                request.Data.DeleteStorageReservation);
+
+            await UniTask.WhenAll(
                 DatabaseCache.SetPlayerCharacter(request.Data.CharacterData),
-                DatabaseCache.SetSummonBuffs(request.Data.CharacterData.Id, request.Data.SummonBuffs),
-            };
-            await UniTask.WhenAll(tasks);
+                DatabaseCache.SetSummonBuffs(request.Data.CharacterData.Id, request.Data.SummonBuffs));
+
+            UpsertCharacterInUserIdCache(request.Data.CharacterData);
+
             result.InvokeSuccess(new CharacterResp()
             {
                 CharacterData = request.Data.CharacterData,
@@ -204,6 +242,7 @@ namespace MultiplayerARPG.MMO
             }
             // Delete data from database
             await Database.DeleteCharacter(request.Data.UserId, request.Data.CharacterId);
+            RemoveCharacterFromUserIdCache(request.Data.UserId, request.Data.CharacterId);
             // Remove data from cache
             if (playerCharacter != null)
             {
