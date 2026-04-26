@@ -792,7 +792,15 @@ namespace MultiplayerARPG
                 if (!DefaultServerUserHandlers.PlayerCharacters.TryGetValue(player.ConnectionId, out IPlayerCharacterData playerCharacter))
                     continue;
 
-                HashSet<uint> objectIds = player.GetSubscribingObjectIds();
+                //HashSet<uint> objectIds = player.GetSubscribingObjectIds();
+                //DG fix
+                var objectIds = new HashSet<uint>();
+                var enumerator = player.GetSubscribingObjectIds();
+                while (enumerator.MoveNext())
+                {
+                    objectIds.Add(enumerator.Current);
+                }
+
                 movementDatas = new NativeHashMap<uint, MovementData>(objectIds.Count, Allocator.TempJob);
                 movementEnttitiesDataResults = new NativeList<MovementResult>(objectIds.Count, Allocator.TempJob);
                 ModesResults = new NativeHashMap<uint, byte>(objectIds.Count, Allocator.TempJob);
