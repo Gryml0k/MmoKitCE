@@ -549,7 +549,46 @@ namespace MultiplayerARPG
             return false;
         }
 
-        public bool WriteServerState(long writeTimestamp, NetDataWriter writer, out bool shouldSendReliably)
+        public MovementData CreateMovementData(out List<EntityMovementForceApplier> forceAppliers)
+        {
+            bool shouldSendReliably = false;
+            if (_sendingDash)
+            {
+                shouldSendReliably = true;
+                MovementState |= MovementState.IsDash;
+            }
+            else
+            {
+                MovementState &= ~MovementState.IsDash;
+            }
+            if (_isTeleporting)
+            {
+                shouldSendReliably = true;
+                if (_stillMoveAfterTeleport)
+                    MovementState |= MovementState.IsTeleport;
+                else
+                    MovementState = MovementState.IsTeleport;
+            }
+            else
+            {
+                MovementState &= ~MovementState.IsTeleport;
+            }
+
+            MovementData movementData = new MovementData();
+            movementData.movementState = (uint)MovementState;
+            movementData.extraMovementState = (byte)ExtraMovementState;
+            movementData.worldPosition = EntityTransform.position;
+            movementData.yAngle = EntityTransform.eulerAngles.y;
+            movementData.shouldSendReliably = shouldSendReliably;
+            forceAppliers = _movementForceAppliers;
+
+            _isTeleporting = false;
+            _stillMoveAfterTeleport = false;
+
+            return movementData;
+        }
+
+        public bool WriteServerState(long writeTimestamp, NetDataWriter writer,  out bool shouldSendReliably)
         {
             shouldSendReliably = false;
             if (!_isStarted)
@@ -763,7 +802,6 @@ namespace MultiplayerARPG
                 // If it is not a client, don't have to simulate movement, just set the position (but still simulate gravity)
                 _acceptedPosition = newPos;
                 EntityTransform.position = newPos;
-                CurrentGameManager.ShouldPhysicSyncTransforms = true;
                 // Update character rotation
                 RemoteTurnSimulation(yAngle, unityDeltaTime);
             }

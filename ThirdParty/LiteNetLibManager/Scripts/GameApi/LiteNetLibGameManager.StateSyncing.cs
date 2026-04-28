@@ -1,3 +1,5 @@
+// CE security: #31
+
 using LiteNetLib;
 using LiteNetLib.Utils;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ namespace LiteNetLibManager
 {
     public partial class LiteNetLibGameManager
     {
-        public const ushort MAX_UNRELIABLE_PACKET_SIZE = 1023; // 1024 - 1 (unreliable header)
+        public const ushort MAX_UNRELIABLE_PACKET_SIZE = 1020; // 1024 - 1 (unreliable header)
         protected readonly List<LiteNetLibSyncElement> _updatingClientSyncElements = new List<LiteNetLibSyncElement>();
         protected readonly List<LiteNetLibSyncElement> _updatingServerSyncElements = new List<LiteNetLibSyncElement>();
         protected readonly NetDataWriter _gameStatesWriter = new NetDataWriter(true, 1024);
@@ -76,14 +78,14 @@ namespace LiteNetLibManager
                     }
                     catch
                     {
-                        if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read game state properly, error occurs while reading.");
+                        if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read game state properly, error occurs while reading: {identity.ObjectId} {elementId}.");
                         reader.SetPosition(positionBeforeRead);
                         reader.SkipBytes(dataLength);
                     }
                 }
                 else
                 {
-                    if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read game state properly, sync element not found.");
+                    if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read game state properly, sync element not found: {identity.ObjectId} {elementId}.");
                     reader.SetPosition(positionBeforeRead);
                     reader.SkipBytes(dataLength);
                 }
@@ -98,13 +100,13 @@ namespace LiteNetLibManager
                     }
                     catch
                     {
-                        if (LogError) Logging.LogError(LogTag, $"Unable to read game state properly, sync element not found.");
+                        if (LogError) Logging.LogError(LogTag, $"Unable to read game state properly, sync element not found: {identity.ObjectId} {elementId}.");
                         return false;
                     }
                 }
                 else
                 {
-                    if (LogError) Logging.LogError(LogTag, $"Unable to read game state properly, sync element not found.");
+                    if (LogError) Logging.LogError(LogTag, $"Unable to read game state properly, sync element not found: {identity.ObjectId} {elementId}.");
                     return false;
                 }
             }
@@ -236,7 +238,7 @@ namespace LiteNetLibManager
                 uint objectId = reader.GetPackedUInt();
                 if (!Assets.TryGetSpawnedObject(objectId, out LiteNetLibIdentity identity))
                 {
-                    if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read delta game state properly, identity not found.");
+                    if (LogWarn) Logging.LogWarning(LogTag, $"Unable to read delta game state properly, identity not found: {objectId}.");
                     continue;
                 }
                 ushort elementLength = reader.GetUShort();
@@ -474,7 +476,7 @@ namespace LiteNetLibManager
                 if (stateCount > 0)
                 {
                     // Send data to client
-                    ServerSendMessage(player.ConnectionId, syncChannelId, DeliveryMethod.ReliableUnordered, _gameStatesWriter);
+                    ServerSendMessage(player.ConnectionId, syncChannelId, DeliveryMethod.ReliableOrdered, _gameStatesWriter);
                 }
                 syncingStatesByChannelId.Value.Clear();
             }
@@ -514,7 +516,7 @@ namespace LiteNetLibManager
                 {
                     tempLastPosition = _gameStatesWriter.Length;
                     WriteSyncElement(_gameStatesWriter, syncElement, tick, false);
-                    bool isOverflow = _gameStatesWriter.Length > MAX_UNRELIABLE_PACKET_SIZE;
+                    bool isOverflow = _gameStatesWriter.Length >= MAX_UNRELIABLE_PACKET_SIZE;
                     if (isOverflow)
                     {
                         // Set length of objects
@@ -526,7 +528,19 @@ namespace LiteNetLibManager
                         // Set position where it is not overflowed
                         _gameStatesWriter.SetPosition(tempLastPosition);
                         // Send data to client
-                        ServerSendMessage(player.ConnectionId, 0, DeliveryMethod.Unreliable, _gameStatesWriter);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+                        try
+                        {
+#endif
+                            ServerSendMessage(player.ConnectionId, 0, DeliveryMethod.Unreliable, _gameStatesWriter);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+                        }
+                        catch (TooBigPacketException ex)
+                        {
+                            Logging.LogError(LogTag, $"Too Big Packet {_gameStatesWriter.Length}");
+                            throw ex;
+                        }
+#endif
 
                         // Reset data and write data for overflowed element
                         objectLength = 1;
@@ -559,7 +573,19 @@ namespace LiteNetLibManager
             _gameStatesWriter.Put(objectLength);
             _gameStatesWriter.SetPosition(tempLastPosition);
             // Send data to client
-            ServerSendMessage(player.ConnectionId, 0, DeliveryMethod.Unreliable, _gameStatesWriter);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            try
+            {
+#endif
+                ServerSendMessage(player.ConnectionId, 0, DeliveryMethod.Unreliable, _gameStatesWriter);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            }
+            catch (TooBigPacketException ex)
+            {
+                Logging.LogError(LogTag, $"Too Big Packet {_gameStatesWriter.Length}");
+                throw ex;
+            }
+#endif
         }
 
         private void SyncGameStateToServer()
@@ -579,7 +605,7 @@ namespace LiteNetLibManager
                 if (stateCount > 0)
                 {
                     // Send data to server
-                    ClientSendMessage(syncChannelId, DeliveryMethod.ReliableUnordered, _gameStatesWriter);
+                    ClientSendMessage(syncChannelId, DeliveryMethod.ReliableOrdered, _gameStatesWriter);
                 }
                 syncingStatesByChannelId.Value.Clear();
             }
