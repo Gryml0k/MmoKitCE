@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 1808cf8134d768f4985cde8fe0f80fb1, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 57c252c492836e345b1fb4016d9cd52d, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a888d112eafd61c4681f7095b2035eae, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -129,7 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650234716345238, guid: d2c274d504629844ba9d4993edf72817, type: 3}
       propertyPath: m_Name
-      value: MMOServerInstance-CE
+      value: MMOServerInstance
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009622383931608, guid: d2c274d504629844ba9d4993edf72817, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4009622383931608, guid: d2c274d504629844ba9d4993edf72817, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,18 +175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817, type: 3}
-      propertyPath: dbName
-      value: wildmmo
-      objectReference: {fileID: 0}
-    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817, type: 3}
-      propertyPath: password
-      value: Yendi1984
-      objectReference: {fileID: 0}
-    - target: {fileID: 114788248445432888, guid: d2c274d504629844ba9d4993edf72817, type: 3}
-      propertyPath: overrideExePath
-      value: C:\Projects\KitCE\\builds\MmoKitCE.exe
-      objectReference: {fileID: 0}
     - target: {fileID: 114946005600446132, guid: d2c274d504629844ba9d4993edf72817, type: 3}
       propertyPath: mapNetworkManager
       value: 
@@ -200,10 +192,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1437744010153436, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
-      propertyPath: m_Name
-      value: MMOClientInstance-CE
-      objectReference: {fileID: 0}
     - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -253,10 +241,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1709158558116358, guid: 16b2c0544b2d04c4c94eb1e5d854b997, type: 3}
-      propertyPath: m_Name
-      value: CanvasLoading-CE
-      objectReference: {fileID: 0}
     - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -466,57 +450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13ade7668aa0a74fb466e174ebb004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1213352771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1213352773}
-  - component: {fileID: 1213352772}
-  m_Layer: 0
-  m_Name: Config
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1213352772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213352771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 680296a8541844d46be994b6a2de3be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preset: {fileID: 0}
-  settings:
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
-    fontColor: {r: 1, g: 1, b: 1, a: 1}
-    textAlignment: 0
-    fontStyle: 1
-    uppercase: 0
---- !u!4 &1213352773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213352771}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232480984
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +617,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 118443896413433224, guid: fb4085b2ccccaef4eba587b6db45c7b4, type: 3}
       propertyPath: m_Name
-      value: MapNetworkManager-CE
+      value: MapNetworkManager
       objectReference: {fileID: 0}
     - target: {fileID: 832756405420229149, guid: fb4085b2ccccaef4eba587b6db45c7b4, type: 3}
       propertyPath: onLoadSceneStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -793,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6325369373293676653, guid: 38d06e6a8e4a7604e9b904fb32ddb5fe, type: 3}
       propertyPath: m_Name
-      value: GameInstance-CE
+      value: GameInstance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -810,5 +743,4 @@ SceneRoots:
   - {fileID: 259555351}
   - {fileID: 657742876}
   - {fileID: 3472249309801433388}
-  - {fileID: 1213352773}
   - {fileID: 3891596336184503898}
