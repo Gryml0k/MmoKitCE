@@ -440,7 +440,7 @@ MonoBehaviour:
       applyPlayableIk: 0
     moveStates:
       forwardState:
-        clip: {fileID: 0}
+        clip: {fileID: 7400000, guid: 9ea7dd390d153c54cb1662d5a2051ffa, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
         isAdditive: 0
@@ -886,21 +886,21 @@ MonoBehaviour:
         applyFootIk: 0
         applyPlayableIk: 0
     jumpState:
-      clip: {fileID: 0}
+      clip: {fileID: 7400000, guid: 1e50a962f64820345aa3ffcbfa9df913, type: 2}
       animSpeedRate: 0
       transitionDuration: 0
       isAdditive: 0
       applyFootIk: 0
       applyPlayableIk: 0
     fallState:
-      clip: {fileID: 0}
+      clip: {fileID: 7400000, guid: 1e50a962f64820345aa3ffcbfa9df913, type: 2}
       animSpeedRate: 0
       transitionDuration: 0
       isAdditive: 0
       applyFootIk: 0
       applyPlayableIk: 0
     landedState:
-      clip: {fileID: 0}
+      clip: {fileID: 7400000, guid: 1e50a962f64820345aa3ffcbfa9df913, type: 2}
       animSpeedRate: 0
       transitionDuration: 0
       isAdditive: 0
@@ -2565,6 +2565,7 @@ MonoBehaviour:
   useRootMotionClimbing: 0
   rootMotionGroundedVerticalVelocity: -2
   snapThreshold: 5
+  skinWidthAdjustTarget: {fileID: 0}
 --- !u!95 &2586447506638569689
 Animator:
   serializedVersion: 7
@@ -2575,7 +2576,7 @@ Animator:
   m_GameObject: {fileID: 9101515592500674585}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a46348a6ba028d84383bd34991b38212, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

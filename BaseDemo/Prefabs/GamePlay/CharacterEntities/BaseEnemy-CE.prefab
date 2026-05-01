@@ -429,7 +429,7 @@ MonoBehaviour:
       applyPlayableIk: 0
     moveStates:
       forwardState:
-        clip: {fileID: 0}
+        clip: {fileID: 7400000, guid: 9ea7dd390d153c54cb1662d5a2051ffa, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
         isAdditive: 0
