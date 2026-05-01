@@ -48,7 +48,7 @@ MonoBehaviour:
   port: 3306
   username: root
   password: password
-  dbName: mmorpg_kit
+  dbName: mmokitce
   connectionString: 
 --- !u!1 &1250662783992638
 GameObject:
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dbPath: ./mmorpgtemplate.sqlite3
-  editorDbPath: C:\Users\ITTIPON\Desktop\UnityBuilds\MultiplayerARPG\mmorpgtemplate.sqlite3
+  editorDbPath: C:\Porjects\MmoKitCE\builds\mmorpgtemplate.sqlite3
 --- !u!1 &1650234716345238
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 114227780437250376}
   - component: {fileID: 114946005600446132}
   m_Layer: 0
-  m_Name: MMOServerInstance
+  m_Name: MMOServerInstance-CE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 976896942459451648}
   - {fileID: 4689870637795574}
   - {fileID: 4281435147628774}
   - {fileID: 4765183370109292}
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6562084915e6c5749b275e15b0e66cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loginNetworkManager: {fileID: 3292125351772216773}
   centralNetworkManager: {fileID: 114543387092495668}
   mapSpawnNetworkManager: {fileID: 114788248445432888}
   mapNetworkManager: {fileID: 0}
@@ -246,11 +248,12 @@ MonoBehaviour:
   webSocketSecure: 0
   webSocketCertPath: 
   webSocketCertPassword: 
-  startCentralOnAwake: 0
-  startMapSpawnOnAwake: 0
-  startDatabaseOnAwake: 0
+  startLoginOnAwake: 1
+  startCentralOnAwake: 1
+  startMapSpawnOnAwake: 1
+  startDatabaseOnAwake: 1
   startMapOnAwake: 0
-  startingMap: {fileID: 11400000, guid: de8b0e4099f8d444692e88f92309e90d, type: 2}
+  startingMap: {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
   databaseOptionIndex: 0
   disableDatabaseCaching: 0
 --- !u!1 &1773992668051484
@@ -316,18 +319,13 @@ MonoBehaviour:
   batchModeArguments: -batchmode -nographics
   spawningChannelIds:
   - 1
-  - 2
   spawningMaps:
-  - {fileID: 11400000, guid: de8b0e4099f8d444692e88f92309e90d, type: 2}
-  - {fileID: 11400000, guid: fbe2a93dfafee544cbeaf175d3491e33, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
   spawningAllocateMaps:
-  - mapInfo: {fileID: 11400000, guid: de8b0e4099f8d444692e88f92309e90d, type: 2}
-    allocateAmount: 0
-  - mapInfo: {fileID: 11400000, guid: fbe2a93dfafee544cbeaf175d3491e33, type: 2}
+  - mapInfo: {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
     allocateAmount: 0
   isOverrideExePath: 1
-  overrideExePath: C:\Projects\MmoKitCE\builds\windows\MmoKitCE.exe
+  overrideExePath: C:\Projects\MmoKitCE\\builds\MmoKitCE.exe
   editorNotSpawnInBatchMode: 1
 --- !u!1 &1834896065226248
 GameObject:
@@ -387,6 +385,71 @@ MonoBehaviour:
   databaseOptions:
   - {fileID: 114414512406587944}
   - {fileID: 114715813743394434}
+--- !u!1 &3476521299117261828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976896942459451648}
+  - component: {fileID: 3292125351772216773}
+  m_Layer: 0
+  m_Name: LoginNetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976896942459451648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476521299117261828}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4009622383931608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3292125351772216773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476521299117261828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7c47af9d7555a4eaa82a4d5a71a1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLogLevel: 2
+  networkAddress: localhost
+  networkPort: 7500
+  useWebSocket: 0
+  webSocketSecure: 0
+  webSocketCertificateFilePath: 
+  webSocketCertificatePassword: 
+  updateFps: 20
+  maxConnections: 4
+  transportFactory: {fileID: 0}
+  clusterServerAddress: 127.0.0.1
+  clusterServerPort: 6010
+  loginServerAddress: 127.0.0.1
+  disableDefaultLogin: 0
+  minUsernameLength: 2
+  maxUsernameLength: 24
+  minPasswordLength: 2
+  minCharacterNameLength: 2
+  maxCharacterNameLength: 16
+  requireEmail: 0
+  requireEmailVerification: 0
 --- !u!1 &9006753358993515565
 GameObject:
   m_ObjectHideFlags: 0
