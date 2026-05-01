@@ -47,7 +47,7 @@ MonoBehaviour:
   address: 127.0.0.1
   port: 3306
   username: root
-  password: password
+  password: 
   dbName: mmokitce
   connectionString: 
 --- !u!1 &1250662783992638
@@ -105,7 +105,6 @@ MonoBehaviour:
   maxConnections: 1100
   transportFactory: {fileID: 0}
   clusterServerPort: 6010
-  mapSpawnMillisecondsTimeout: 0
   defaultChannelMaxConnections: 500
   channels:
   - id: 1
@@ -114,14 +113,7 @@ MonoBehaviour:
   - id: 2
     title: Channel 2
     maxConnections: 0
-  disableDefaultLogin: 0
-  minUsernameLength: 2
-  maxUsernameLength: 24
-  minPasswordLength: 2
-  minCharacterNameLength: 2
-  maxCharacterNameLength: 16
-  requireEmail: 0
-  requireEmailVerification: 0
+  mapSpawnMillisecondsTimeout: 0
   updateUserCountInterval: 5
 --- !u!1 &1454126604845530
 GameObject:
@@ -248,10 +240,10 @@ MonoBehaviour:
   webSocketSecure: 0
   webSocketCertPath: 
   webSocketCertPassword: 
-  startLoginOnAwake: 1
-  startCentralOnAwake: 1
-  startMapSpawnOnAwake: 1
-  startDatabaseOnAwake: 1
+  startLoginOnAwake: 0
+  startCentralOnAwake: 0
+  startMapSpawnOnAwake: 0
+  startDatabaseOnAwake: 0
   startMapOnAwake: 0
   startingMap: {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
   databaseOptionIndex: 0
@@ -325,7 +317,7 @@ MonoBehaviour:
   - mapInfo: {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
     allocateAmount: 0
   isOverrideExePath: 1
-  overrideExePath: C:\Projects\MmoKitCE\\builds\MmoKitCE.exe
+  overrideExePath: C:\Projects\KitCE\\builds\MmoKitCE.exe
   editorNotSpawnInBatchMode: 1
 --- !u!1 &1834896065226248
 GameObject:
@@ -381,10 +373,16 @@ MonoBehaviour:
   updateFps: 20
   maxConnections: 200
   transportFactory: {fileID: 0}
-  database: {fileID: 114414512406587944}
+  database: {fileID: 114715813743394434}
   databaseOptions:
-  - {fileID: 114414512406587944}
   - {fileID: 114715813743394434}
+  - {fileID: 114414512406587944}
+  useDeferredCharacterSaveScheduler: 1
+  characterSaveLaneCount: 32
+  characterSaveTickMilliseconds: 500
+  characterSaveMaxPerTick: 8
+  characterSaveMinIntervalSeconds: 20
+  characterSaveRetryDelaySeconds: 5
 --- !u!1 &3476521299117261828
 GameObject:
   m_ObjectHideFlags: 0

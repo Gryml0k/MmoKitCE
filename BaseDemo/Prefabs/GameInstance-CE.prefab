@@ -61,18 +61,25 @@ MonoBehaviour:
   expDropRepresentItem: {fileID: 0}
   goldDropRepresentItem: {fileID: 0}
   currencyDropRepresentItems: []
-  itemDropEntityPrefab: {fileID: 114247390284341630, guid: 611b907cf80c87a4eb9e0d5d4a8688f5, type: 3}
+  itemDropEntityPrefab: {fileID: 114247390284341630, guid: 611b907cf80c87a4eb9e0d5d4a8688f5,
+    type: 3}
   expDropEntityPrefab: {fileID: 0}
   goldDropEntityPrefab: {fileID: 0}
   currencyDropEntityPrefab: {fileID: 0}
-  warpPortalEntityPrefab: {fileID: 114731892942428866, guid: 5773ff22c96e3ab4bb12d8202ec86244, type: 3}
-  playerCorpsePrefab: {fileID: 9036829038788336466, guid: d98696903f1afa34fba36b435c7fb329, type: 3}
-  monsterCorpsePrefab: {fileID: 9036829038788336466, guid: d98696903f1afa34fba36b435c7fb329, type: 3}
-  uiSceneGameplayPrefab: {fileID: 114088817493988554, guid: 4af36d4bdf0cf07409f4412130b793ec, type: 3}
+  warpPortalEntityPrefab: {fileID: 114731892942428866, guid: 5773ff22c96e3ab4bb12d8202ec86244,
+    type: 3}
+  playerCorpsePrefab: {fileID: 9036829038788336466, guid: d98696903f1afa34fba36b435c7fb329,
+    type: 3}
+  monsterCorpsePrefab: {fileID: 9036829038788336466, guid: d98696903f1afa34fba36b435c7fb329,
+    type: 3}
+  uiSceneGameplayPrefab: {fileID: 114088817493988554, guid: 4af36d4bdf0cf07409f4412130b793ec,
+    type: 3}
   uiSceneGameplayMobilePrefab: {fileID: 0}
   uiSceneGameplayConsolePrefab: {fileID: 0}
-  defaultControllerPrefab: {fileID: 114096437919969166, guid: 147be1283e4eb834d94ad1c905a031e7, type: 3}
-  serverCharacterPrefab: {fileID: 114427175623056218, guid: 5d1fef0b895ca2a43899fb0236936a59, type: 3}
+  defaultControllerPrefab: {fileID: 114096437919969166, guid: 147be1283e4eb834d94ad1c905a031e7,
+    type: 3}
+  serverCharacterPrefab: {fileID: 114427175623056218, guid: 5d1fef0b895ca2a43899fb0236936a59,
+    type: 3}
   owningCharacterObjects:
   - {fileID: 1555851488130254, guid: 90f99869b96e2df4bae83e1f870b68ec, type: 3}
   - {fileID: 5914040168613522836, guid: a854feb116427e540a5620c7d0d13661, type: 3}
@@ -90,11 +97,15 @@ MonoBehaviour:
   npcObjects: []
   npcMiniMapObjects:
   - {fileID: 1971649022222436, guid: 3ad746095a8b209429a1b9e27fab61aa, type: 3}
-  owningCharacterUI: {fileID: 114899762762614018, guid: 8447ca51d1886764e99f26df8033c4c5, type: 3}
-  nonOwningCharacterUI: {fileID: 114899762762614018, guid: cf8cfe06d3da49e4ab083bd040961dd5, type: 3}
-  monsterCharacterUI: {fileID: 114127719814556812, guid: 3570a7d7c31a7704f92f9ffd3242ff3c, type: 3}
+  owningCharacterUI: {fileID: 114899762762614018, guid: 8447ca51d1886764e99f26df8033c4c5,
+    type: 3}
+  nonOwningCharacterUI: {fileID: 114899762762614018, guid: cf8cfe06d3da49e4ab083bd040961dd5,
+    type: 3}
+  monsterCharacterUI: {fileID: 114127719814556812, guid: 3570a7d7c31a7704f92f9ffd3242ff3c,
+    type: 3}
   npcUI: {fileID: 114537631033164756, guid: b75f7de46d27c284d913d9b2984ff84d, type: 3}
-  npcQuestIndicator: {fileID: 114612624042908474, guid: 4acaa26309bf3094094eec89f99e2972, type: 3}
+  npcQuestIndicator: {fileID: 114612624042908474, guid: 4acaa26309bf3094094eec89f99e2972,
+    type: 3}
   levelUpEffect: {fileID: 0}
   levelUpEffects:
   - {fileID: 114843870614705530, guid: 6f6e255b4877f874c985ed9fb46293a1, type: 3}
@@ -103,11 +114,12 @@ MonoBehaviour:
   freezeEffects: []
   expTree: 140000001e00000031000000490000006500000086000000aa000000d1000000fa000000270100005601000087010000bb010000f10100002902000064020000a0020000de0200001e0300005f030000a3030000e80300002f04000077040000c10400000d0500005a050000a9050000f90500004a0600009d060000f1060000470700009e070000f707000050080000ab0800000809000065090000c4090000240a0000850a0000e80a00004b0b0000b00b0000160c00007d0c0000e50c00004e0d0000b90d0000240e0000910e0000fe0e00006d0f0000dd0f00004d100000bf10000032110000a61100001b12000090120000071300007f130000f813000071140000ec14000068150000e415000062160000e01600005f170000e017000061180000e318000066190000ea1900006e1a0000f41a00007a1b0000021c00008a1c0000131d00009d1d0000281e0000b31e0000401f0000cd1f00005b200000ea200000792100000a2200009b2200002d230000c023000054240000e82400007e25000014260000aa26000042270000
   expTable: {fileID: 0}
-  gameDatabase: {fileID: 11400000, guid: 78362f3a31c322e4396aa7f42ea58f99, type: 2}
+  gameDatabase: {fileID: 11400000, guid: 0148b1a6414a31441917294b248b29ed, type: 2}
   entitySetting: {fileID: 0}
   npcDatabase: {fileID: 11400000, guid: dae14f7f7d125fc4096ba7ac1f68d581, type: 2}
   warpPortalDatabase: {fileID: 11400000, guid: 6a5e8bb8645bbb349a05709f9b37b5df, type: 2}
-  socialSystemSetting: {fileID: 11400000, guid: afad462dae207414f91b207f6882dad2, type: 2}
+  socialSystemSetting: {fileID: 11400000, guid: afad462dae207414f91b207f6882dad2,
+    type: 2}
   defaultWeaponItem: {fileID: 11400000, guid: 7a97cfad0e4b1ee49ba6f735b4b1b0d9, type: 2}
   defaultDamageElement: {fileID: 0}
   defaultDamageHitEffects:
@@ -219,7 +231,8 @@ MonoBehaviour:
   petDeadLockDuration: 60
   petUnSummonLockDuration: 30
   joinInstanceMapDistance: 20
-  newCharacterSetting: {fileID: 11400000, guid: 96c4888e481bfee4887f1537d72da080, type: 2}
+  newCharacterSetting: {fileID: 11400000, guid: 96c4888e481bfee4887f1537d72da080,
+    type: 2}
   startGold: 0
   startItems: []
   testingNewCharacterSetting: {fileID: 0}
@@ -400,7 +413,8 @@ MonoBehaviour:
   - keyName: Dash
     keyCode: 113
   settingsSaveKeyPrefix: SETTING_KEY_BIND
-  inputActionAsset: {fileID: -944628639613478452, guid: b7b0acfa1d32d3f4fb4dd990fef8568c, type: 3}
+  inputActionAsset: {fileID: -944628639613478452, guid: b7b0acfa1d32d3f4fb4dd990fef8568c,
+    type: 3}
 --- !u!114 &5555039954835809266
 MonoBehaviour:
   m_ObjectHideFlags: 0

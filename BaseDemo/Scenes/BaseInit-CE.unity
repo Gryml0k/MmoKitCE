@@ -173,21 +173,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817,
-        type: 3}
-      propertyPath: dbName
-      value: mmokitce
-      objectReference: {fileID: 0}
-    - target: {fileID: 114414512406587944, guid: d2c274d504629844ba9d4993edf72817,
-        type: 3}
-      propertyPath: password
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114788248445432888, guid: d2c274d504629844ba9d4993edf72817,
-        type: 3}
-      propertyPath: overrideExePath
-      value: C:\Projects\KitCE\\builds\MmoKitCE.exe
-      objectReference: {fileID: 0}
     - target: {fileID: 114946005600446132, guid: d2c274d504629844ba9d4993edf72817,
         type: 3}
       propertyPath: mapNetworkManager
@@ -209,10 +194,6 @@ PrefabInstance:
     - target: {fileID: 1437744010153436, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
       propertyPath: m_Name
       value: MMOClientInstance-CE
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,6 +221,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063033428646606, guid: aea5f7c25eab33041b253c93bea7b0fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114218027599039394, guid: aea5f7c25eab33041b253c93bea7b0fd,
@@ -273,11 +266,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
         type: 3}
@@ -352,6 +340,21 @@ PrefabInstance:
     - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224184583011018542, guid: 16b2c0544b2d04c4c94eb1e5d854b997,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -529,8 +532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preset: {fileID: 0}
   settings:
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
-    fontColor: {r: 1, g: 1, b: 1, a: 1}
+    backgroundColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    fontColor: {r: 0, g: 0, b: 0, a: 1}
     textAlignment: 0
     fontStyle: 1
     uppercase: 0
