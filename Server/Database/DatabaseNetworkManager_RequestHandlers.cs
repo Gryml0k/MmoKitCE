@@ -1,4 +1,6 @@
-﻿using ConcurrentCollections;
+﻿// ce scability: #53
+
+using ConcurrentCollections;
 using Cysharp.Threading.Tasks;
 using LiteNetLibManager;
 using System.Collections.Generic;
