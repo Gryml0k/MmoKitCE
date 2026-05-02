@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb3e5222e9e7b004ca2851754663d850
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/_Gameplay/ChatBubble/UIChatBubble_Local.prefab
+  uploadId: 857340

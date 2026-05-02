@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e8bec6ff24ae839409e93f2f41070528
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/UICharacterCreateClassEntry.prefab
+  uploadId: 857340

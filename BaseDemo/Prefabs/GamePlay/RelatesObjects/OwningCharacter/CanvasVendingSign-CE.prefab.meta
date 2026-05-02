@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 634f3e4cc9b71bc47a80a334a3ef42b3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/Gameplay/RelatesObjects/OwningCharacter/CanvasVendingSign.prefab
+  uploadId: 857340

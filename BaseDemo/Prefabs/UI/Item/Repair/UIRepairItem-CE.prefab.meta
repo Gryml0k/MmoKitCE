@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a1205bac004d0d743921b6a0eb5d8f37
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Item/Repair/UIRepairItem.prefab
+  uploadId: 857340

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7021209efb8249d439b6fbd6e71e4b06
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Item/EnhanceSocket/UIEnhanceSocketItem.prefab
+  uploadId: 857340

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3779618650e1f054db937b8264890e38
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Dueling/UIDueling.prefab
+  uploadId: 857340

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2b57a30030d4ffd4ab3eb35258bb1308
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/BodyPart/UIBodyPart-HairColor.prefab
+  uploadId: 857340

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2e54d23938c14443bd9b6661c0050f4
+timeCreated: 1496598519
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/Gameplay/WarpPortalEntity.prefab
+  uploadId: 857340

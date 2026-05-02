@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8d42f6b0fa525e44bbfddd4bb618d257
+timeCreated: 1512511250
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/Effects/LevelUpEffect.prefab
+  uploadId: 857340
