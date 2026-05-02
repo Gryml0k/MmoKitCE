@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a4d20d9398f6f7c4890ea55ad9a81d89
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/_Gameplay/Share/UITargetCharacterHp.prefab
+  uploadId: 857340

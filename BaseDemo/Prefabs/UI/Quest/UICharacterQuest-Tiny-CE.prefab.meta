@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 412c1391c041aa64386538f505b3b99c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Quest/UICharacterQuest-Tiny.prefab
+  uploadId: 857340

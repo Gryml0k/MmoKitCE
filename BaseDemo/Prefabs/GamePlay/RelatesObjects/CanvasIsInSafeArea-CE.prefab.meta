@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d56bdb31b6d38e4489e9e19d7f2c3b0a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/Gameplay/RelatesObjects/CanvasIsInSafeArea.prefab
+  uploadId: 857340

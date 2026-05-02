@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4a11fbab1c215c41b1bf988e1347db0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Guild/UIGuildMember.prefab
+  uploadId: 857340

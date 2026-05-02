@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: df26b0c336f43574fa8a1d47c7e9b2a9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/Guild/UIGuildSkillIcon_Hotkey.prefab
+  uploadId: 857340

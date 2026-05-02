@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a68eab80e7c7ef84e8e35aa54754a187
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110188
+  packageName: MMORPG KIT (2D/3D/Survival)
+  packageVersion: 1.97b
+  assetPath: Assets/UnityMultiplayerARPG/Demo/Prefabs/UI/TextGameMessage.prefab
+  uploadId: 857340
