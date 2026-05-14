@@ -1,13 +1,13 @@
 ﻿// CE security: #31
 
+using Cysharp.Threading.Tasks;
+using LiteNetLibManager;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Security;
-using LiteNetLibManager;
 using UnityEngine;
 using UnityEngine.Serialization;
-using Cysharp.Threading.Tasks;
 
 namespace MultiplayerARPG.MMO
 {
@@ -949,7 +949,9 @@ namespace MultiplayerARPG.MMO
             MapNetworkManager.webSocketSecure = WebSocketSecure;
             MapNetworkManager.webSocketCertificateFilePath = WebSocketCertificateFilePath;
             MapNetworkManager.webSocketCertificatePassword = WebSocketCertificatePassword;
+#if (UNITY_EDITOR)
             MapNetworkManager.ChannelId = startingChannelId;
+#endif
             MapNetworkManager.StartServer();
         }
 
