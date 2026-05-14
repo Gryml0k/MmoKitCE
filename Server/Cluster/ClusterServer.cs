@@ -97,6 +97,7 @@ namespace MultiplayerARPG.MMO
         protected override void OnStopServer()
         {
             base.OnStopServer();
+            _loginServerPeers.Clear();
             _mapSpawnServerPeers.Clear();
             _mapServerPeers.Clear();
             _mapServerPeersByKey.Clear();
@@ -121,6 +122,8 @@ namespace MultiplayerARPG.MMO
                 case ENetworkEvent.DisconnectEvent:
                     Logging.Log(LogTag, $"OnPeerDisconnected peer.ConnectionId: {eventData.connectionId} disconnectInfo.Reason: {eventData.disconnectInfo.Reason}");
                     ConnectionIds.Remove(eventData.connectionId);
+                    // Remove disconnect login server
+                    _loginServerPeers.Remove(eventData.connectionId);
                     // Remove disconnect map spawn server
                     _mapSpawnServerPeers.Remove(eventData.connectionId);
                     // Remove disconnect map server
@@ -281,7 +284,7 @@ namespace MultiplayerARPG.MMO
                 }));
             }
 
-            // Send map peer info to other map server
+            // Send map peer info to login servers
             foreach (CentralServerPeerInfo loginPeerInfo in _loginServerPeers.Values)
             {
                 // Send current info to other peer
@@ -318,6 +321,18 @@ namespace MultiplayerARPG.MMO
             string key = request.GetPeerInfoKey();
             switch (request.peerType)
             {
+                case CentralServerPeerType.LoginServer:
+                    if (_loginServerPeers.Count > 0)
+                    {
+                        peerInfo = _loginServerPeers.Values.First();
+                        Logging.Log(LogTag, $"Request Login Server Address: [{connectionId}]");
+                    }
+                    else
+                    {
+                        message = UITextKeys.UI_ERROR_SERVER_NOT_FOUND;
+                        Logging.Log(LogTag, $"Request Login Server Address: [{connectionId}] [{message}]");
+                    }
+                    break;
                 // TODO: Balancing servers when there are multiple servers with same type
                 case CentralServerPeerType.MapSpawnServer:
                     if (_mapSpawnServerPeers.Count > 0)
