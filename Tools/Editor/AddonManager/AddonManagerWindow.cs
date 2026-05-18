@@ -61,7 +61,7 @@ namespace MmoKitCE.AddonManager
 		private List<PackageInfo> packages = new List<PackageInfo>();
 		private PackageInfo selectedPackage = null;
 
-		[MenuItem("MMORPG KIT/MmoKitCE/Addon Manager", false, -100)]
+		[MenuItem("Tools/MmoKitCE/Develop/Addon Manager", false, -1000)]
 		public static void ShowWindow()
 		{
 			GetWindow<AddonManagerWindow>("Addon Manager");
