@@ -12,18 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039180bdd4d969240b36b91061f34afe, type: 3}
   m_Name: Vit
   m_EditorClassIdentifier: 
+  btnValidate: 0
   id: 
   defaultTitle: Vitality
   languageSpecificTitles: []
   defaultDescription: 
   languageSpecificDescriptions: []
   category: 
-  icon: {fileID: 0}
-  addressableIcon:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  icon: {fileID: 21300000, guid: 631712b0e4734d640ab2ac9edfef37b9, type: 3}
   battlePointScore: 10
   statsIncreaseEachLevel:
     hp: 2
@@ -44,6 +40,7 @@ MonoBehaviour:
     blockRate: 0
     blockDmgRate: 0
     moveSpeed: 0
+    sprintSpeed: 0
     atkSpeed: 0
     weightLimit: 0
     slotLimit: 0
@@ -57,6 +54,7 @@ MonoBehaviour:
     gravityRate: 0
     protectedSlotLimit: 0
     ammoCapacity: 0
+    recoilModifier: 0
     recoilRate: 0
     rateOfFire: 0
     reloadDuration: 0
@@ -67,7 +65,6 @@ MonoBehaviour:
     decreaseStaminaDecreation: 0
     buyItemPriceRate: 0
     sellItemPriceRate: 0
-    testStat1: 0
   increaseResistances: []
   increaseArmors: []
   increaseDamages: []

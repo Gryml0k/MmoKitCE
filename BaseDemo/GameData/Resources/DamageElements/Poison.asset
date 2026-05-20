@@ -12,21 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed975d25ec712146bb64ff053188e4c, type: 3}
   m_Name: Poison
   m_EditorClassIdentifier: 
+  btnValidate: 0
   id: 
   defaultTitle: Poison
   languageSpecificTitles: []
   defaultDescription: 
   languageSpecificDescriptions: []
   category: 
-  icon: {fileID: 0}
-  addressableIcon:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  icon: {fileID: 21300000, guid: 03092d86962fb574093c530acdb54be8, type: 3}
   resistanceBattlePointScore: 5
   armorBattlePointScore: 5
   damageBattlePointScore: 10
   maxResistanceAmount: 0.95
   damageHitEffects: []
-  addressableDamageHitEffects: []

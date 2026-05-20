@@ -21,7 +21,17 @@ MonoBehaviour:
   attributes: []
   currencies: []
   damageElements: []
-  items: []
+  items:
+  - {fileID: 11400000, guid: 059ee12639a33394d82a780f32475fa5, type: 2}
+  - {fileID: 11400000, guid: 468bd5abf44aa1542bfd9e773a15447f, type: 2}
+  - {fileID: 11400000, guid: 2d57e318a4843d64d8d3924124b94368, type: 2}
+  - {fileID: 11400000, guid: 6038b1c354df3654b9541fa590ffa8e1, type: 2}
+  - {fileID: 11400000, guid: e4e881cff53fe054f830d67ad95dd3d0, type: 2}
+  - {fileID: 11400000, guid: c66ef51ae8805aa47bb9fa26bcf2109c, type: 2}
+  - {fileID: 11400000, guid: 05fd047386612f342aa61c5ddcf274d1, type: 2}
+  - {fileID: 11400000, guid: 52d2c6fb152031542b7798e45c786553, type: 2}
+  - {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+  - {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
   itemCraftFormulas: []
   armorTypes: []
   weaponTypes: []
@@ -44,4 +54,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8d947f013595cd41a2c4322c2ffa4e7, type: 2}
   quests: []
   factions: []
-  gachas: []

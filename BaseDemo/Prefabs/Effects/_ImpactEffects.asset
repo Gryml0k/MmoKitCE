@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a229f6595e5cd854589f1b78e428a5ea, type: 3}
+  m_Name: _ImpactEffects
+  m_EditorClassIdentifier: 
+  defaultEffect: {fileID: 0}
+  defaultImpactEffect:
+    tag:
+      tag: 
+    effect: {fileID: 114984786077298016, guid: fa67f0b7f994d9548821d15fbf67531d, type: 3}
+    addressableEffect:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  impactEffects: []

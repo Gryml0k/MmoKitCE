@@ -12,19 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16f341434d3e7f42b0626bfd4380cea, type: 3}
   m_Name: Resurrection
   m_EditorClassIdentifier: 
+  btnValidate: 0
   id: 
   defaultTitle: Resurrection
   languageSpecificTitles: []
   defaultDescription: 
   languageSpecificDescriptions: []
   category: 
-  icon: {fileID: 21300000, guid: 9517660ed74fd244e8a51993b900a6f2, type: 3}
-  addressableIcon:
-    m_AssetGUID: 9517660ed74fd244e8a51993b900a6f2
-    m_SubObjectName: Heal
-    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_EditorAssetChanged: 1
+  icon: {fileID: 21300000, guid: 631712b0e4734d640ab2ac9edfef37b9, type: 3}
   maxLevel: 1
   battlePointScore: 0
   cannotReset: 0
@@ -42,53 +37,62 @@ MonoBehaviour:
   consumeHp:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   consumeMp:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   consumeStamina:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   consumeHpRate:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   consumeMpRate:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   consumeStaminaRate:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   coolDownDuration:
     baseAmount: 60
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   skillCastEffects: []
-  addressableSkillCastEffects: []
   castDuration:
     baseAmount: 0
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   canBeInterruptedWhileCasting: 0
   skillActivateEffects: []
-  addressableSkillActivateEffects: []
   requirement:
     disallow: 0
     characterLevel:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     skillPoint:
       baseAmount: 1
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     gold:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     attributeAmounts: []
     skillLevels: []
@@ -156,11 +160,11 @@ MonoBehaviour:
         fixedDuration: 0
         extendDuration: 0
         audioClips: []
-        addressableAudioClips: []
       activateAnimationsByWeaponTypes: []
   buffDistance:
     baseAmount: 3
     amountIncreaseEachLevel: 0
+    rateIncreaseEachLevel: 0
     amountIncreaseEachLevelByLevels: []
   buff:
     tag: 
@@ -169,6 +173,7 @@ MonoBehaviour:
     applyChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     increaseStats:
       baseStats:
@@ -190,6 +195,7 @@ MonoBehaviour:
         blockRate: 0
         blockDmgRate: 0
         moveSpeed: 0
+        sprintSpeed: 0
         atkSpeed: 0
         weightLimit: 0
         slotLimit: 0
@@ -203,6 +209,7 @@ MonoBehaviour:
         gravityRate: 0
         protectedSlotLimit: 0
         ammoCapacity: 0
+        recoilModifier: 0
         recoilRate: 0
         rateOfFire: 0
         reloadDuration: 0
@@ -213,7 +220,6 @@ MonoBehaviour:
         decreaseStaminaDecreation: 0
         buyItemPriceRate: 0
         sellItemPriceRate: 0
-        testStat1: 0
       statsIncreaseEachLevel:
         hp: 0
         hpRecovery: 0
@@ -233,6 +239,7 @@ MonoBehaviour:
         blockRate: 0
         blockDmgRate: 0
         moveSpeed: 0
+        sprintSpeed: 0
         atkSpeed: 0
         weightLimit: 0
         slotLimit: 0
@@ -246,6 +253,7 @@ MonoBehaviour:
         gravityRate: 0
         protectedSlotLimit: 0
         ammoCapacity: 0
+        recoilModifier: 0
         recoilRate: 0
         rateOfFire: 0
         reloadDuration: 0
@@ -256,7 +264,50 @@ MonoBehaviour:
         decreaseStaminaDecreation: 0
         buyItemPriceRate: 0
         sellItemPriceRate: 0
-        testStat1: 0
+      rateIncreaseEachLevel:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        sprintSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilModifier: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
       statsIncreaseEachLevelByLevels: []
     increaseStatsRate:
       baseStats:
@@ -278,6 +329,7 @@ MonoBehaviour:
         blockRate: 0
         blockDmgRate: 0
         moveSpeed: 0
+        sprintSpeed: 0
         atkSpeed: 0
         weightLimit: 0
         slotLimit: 0
@@ -291,6 +343,7 @@ MonoBehaviour:
         gravityRate: 0
         protectedSlotLimit: 0
         ammoCapacity: 0
+        recoilModifier: 0
         recoilRate: 0
         rateOfFire: 0
         reloadDuration: 0
@@ -301,7 +354,6 @@ MonoBehaviour:
         decreaseStaminaDecreation: 0
         buyItemPriceRate: 0
         sellItemPriceRate: 0
-        testStat1: 0
       statsIncreaseEachLevel:
         hp: 0
         hpRecovery: 0
@@ -321,6 +373,7 @@ MonoBehaviour:
         blockRate: 0
         blockDmgRate: 0
         moveSpeed: 0
+        sprintSpeed: 0
         atkSpeed: 0
         weightLimit: 0
         slotLimit: 0
@@ -334,6 +387,7 @@ MonoBehaviour:
         gravityRate: 0
         protectedSlotLimit: 0
         ammoCapacity: 0
+        recoilModifier: 0
         recoilRate: 0
         rateOfFire: 0
         reloadDuration: 0
@@ -344,7 +398,50 @@ MonoBehaviour:
         decreaseStaminaDecreation: 0
         buyItemPriceRate: 0
         sellItemPriceRate: 0
-        testStat1: 0
+      rateIncreaseEachLevel:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        sprintSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilModifier: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
       statsIncreaseEachLevelByLevels: []
     increaseAttributes: []
     increaseAttributesRate: []
@@ -361,69 +458,58 @@ MonoBehaviour:
       startAttackDistance: 0
       hitDistance: 0
       hitFov: 0
+      originOffsets: 1
       missileDistance: 0
       missileSpeed: 0
+      isHeadshotInstantDeath: 1
       missileDamageEntity: {fileID: 0}
-      addressableMissileDamageEntity:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
       projectileEffect: {fileID: 0}
-      addressableProjectEffect:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
       pierceThroughEntities: 0
       impactEffects: {fileID: 0}
       throwForce: 0
       throwableLifeTime: 0
       throwableDamageEntity: {fileID: 0}
-      addressableThrowableDamageEntity:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
       customDamageInfo: {fileID: 0}
     isOverrideSkills: 0
     overrideSkills: []
     mount:
       mountEntity: {fileID: 0}
-      addressableMountEntity:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-        hashAssetId: 0
       level:
         baseAmount: 0
         amountIncreaseEachLevel: 0
+        rateIncreaseEachLevel: 0
         amountIncreaseEachLevelByLevels: []
     increaseStatusEffectResistances: []
     duration:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
+    noDuration: 0
     recoveryHp:
       baseAmount: 2
       amountIncreaseEachLevel: 0.25
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     recoveryMp:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     recoveryStamina:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     recoveryFood:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     recoveryWater:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     buffRemovals: []
     damageOverTimes: []
@@ -442,22 +528,27 @@ MonoBehaviour:
     removeBuffWhenAttackChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     removeBuffWhenAttackedChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     removeBuffWhenUseSkillChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     removeBuffWhenUseItemChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     removeBuffWhenPickupItemChance:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     isHide: 0
     isRevealsHide: 0
@@ -472,10 +563,10 @@ MonoBehaviour:
     maxStack:
       baseAmount: 0
       amountIncreaseEachLevel: 0
+      rateIncreaseEachLevel: 0
       amountIncreaseEachLevelByLevels: []
     effects:
     - {fileID: 114626029094176218, guid: 477eb745a76326c44a4467222ca2fbbb, type: 3}
-    addressableEffects: []
   resurrectHpRate: 0.1
   resurrectMpRate: 0.1
   resurrectStaminaRate: 0.1

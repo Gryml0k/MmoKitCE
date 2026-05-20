@@ -12,18 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a278d249b1987cf4ebdb60bb4769bf33, type: 3}
   m_Name: ChangeClassToArcher
   m_EditorClassIdentifier: 
+  btnValidate: 0
   id: 
   defaultTitle: Change Class To Archer
   languageSpecificTitles: []
   defaultDescription: Change character's class to Archer
   languageSpecificDescriptions: []
   category: ClassChange
-  icon: {fileID: 0}
-  addressableIcon:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  icon: {fileID: 21300000, guid: 733c6dbff30493040a1b7c4c740f7bad, type: 3}
   requirement:
     character: {fileID: 11400000, guid: 1f9d2937bcd564b47b49c53b58e4e8af, type: 2}
     faction: {fileID: 0}
@@ -36,8 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d4ff6afdaf8a6646968fbc633a89ae9, type: 2}
   resetAttributes: 0
   resetSkills: 1
-  changeCharacterClass: {fileID: 11400000, guid: 0122f68aff58f2a4e995208bf67f18ba,
-    type: 2}
+  changeCharacterClass: {fileID: 11400000, guid: 0122f68aff58f2a4e995208bf67f18ba, type: 2}
   changeCharacterFaction: {fileID: 0}
   rewardExp: 0
   rewardGold: 0

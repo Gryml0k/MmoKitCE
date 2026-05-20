@@ -19,7 +19,7 @@ MonoBehaviour:
   defaultDescription: Talk to "Test Quest 02"
   languageSpecificDescriptions: []
   category: Daily
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 719817800e3bc56428daa40253c51a02, type: 3}
   requirement:
     character: {fileID: 0}
     faction: {fileID: 0}

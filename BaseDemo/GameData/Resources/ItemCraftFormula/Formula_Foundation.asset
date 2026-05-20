@@ -12,19 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d38317bfc76fb42a04d40e1e61328f, type: 3}
   m_Name: Formula_Foundation
   m_EditorClassIdentifier: 
+  btnValidate: 0
   id: 
   defaultTitle: 
   languageSpecificTitles: []
   defaultDescription: 
   languageSpecificDescriptions: []
   category: 
-  icon: {fileID: 0}
-  addressableIcon:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
+  icon: {fileID: 21300000, guid: 7cebf55d1dd5dc74bb4554ce49af128d, type: 3}
   itemCraft:
     craftingItem: {fileID: 11400000, guid: e4e881cff53fe054f830d67ad95dd3d0, type: 2}
     amount: 1
