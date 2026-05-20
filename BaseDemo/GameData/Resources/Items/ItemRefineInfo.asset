@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049e06506c625da4eb20a1397a22b120, type: 3}
+  m_Name: ItemRefineInfo
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: Normal
+  languageSpecificTitles: []
+  defaultDescription: 
+  languageSpecificDescriptions: []
+  category: 
+  icon: {fileID: 0}
+  addressableIcon:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  levels:
+  - titleColor: {r: 0, g: 0, b: 0, a: 0}
+    successRate: 1
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 100
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 0, g: 0, b: 0, a: 0}
+    successRate: 1
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 200
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 0, g: 0, b: 0, a: 0}
+    successRate: 1
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 300
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 1, b: 0, a: 1}
+    successRate: 0.8
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 400
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 1, b: 0, a: 1}
+    successRate: 0.8
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 500
+    refineFailDecreaseLevels: 1
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 1, b: 0, a: 1}
+    successRate: 0.6
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 600
+    refineFailDecreaseLevels: 1
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    successRate: 0.6
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 700
+    refineFailDecreaseLevels: 1
+    refineFailDestroyItem: 0
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    successRate: 0.4
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 800
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 1
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    successRate: 0.2
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 900
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 1
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  - titleColor: {r: 1, g: 0, b: 0, a: 1}
+    successRate: 0.1
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 1000
+    refineFailDecreaseLevels: 0
+    refineFailDestroyItem: 1
+    availableEnhancers:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+      increaseSuccessRate: 0.25
+      decreaseRequireGoldRate: 0.25
+      chanceToNotDecreaseLevels: 1
+      chanceToNotDestroyItem: 1
+    failReturnings: []
+  repairPrices:
+  - durabilityRate: 0.25
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 25
+  - durabilityRate: 0.5
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 50
+  - durabilityRate: 0.75
+    requireItems: []
+    requireCurrencies: []
+    requireGold: 75

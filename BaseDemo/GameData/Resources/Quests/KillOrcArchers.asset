@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a278d249b1987cf4ebdb60bb4769bf33, type: 3}
+  m_Name: KillOrcArchers
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: Kill Orc Archers
+  languageSpecificTitles: []
+  defaultDescription: Kill 5 Orc Archers
+  languageSpecificDescriptions: []
+  category: Generic
+  icon: {fileID: 0}
+  addressableIcon:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  requirement:
+    character: {fileID: 0}
+    faction: {fileID: 0}
+    level: 0
+    completedQuests: []
+  tasks:
+  - taskType: 0
+    monsterCharacterAmount:
+      monster: {fileID: 11400000, guid: 23e69da72a14d644eb8c0128af2ee872, type: 2}
+      amount: 5
+    itemAmount:
+      item: {fileID: 0}
+      level: 0
+      amount: 0
+    doNotDecreaseItemsOnQuestComplete: 0
+    npcEntity: {fileID: 0}
+    npcEntityId: 0
+    npcEntityTitle: 
+    npcEntityTitles: []
+    talkToNpcDialog: {fileID: 0}
+    completeAfterTalked: 0
+    customQuestTask: {fileID: 0}
+    useCustomDescription: 0
+    defaultDescription: 
+    languageSpecificDescriptions: []
+    useCustomCompletedDescription: 0
+    defaultCompletedDescription: 
+    languageSpecificCompletedDescriptions: []
+  randomTasks:
+  - tasks:
+    - taskType: 0
+      monsterCharacterAmount:
+        monster: {fileID: 11400000, guid: 23e69da72a14d644eb8c0128af2ee872, type: 2}
+        amount: 5
+      itemAmount:
+        item: {fileID: 0}
+        level: 0
+        amount: 0
+      doNotDecreaseItemsOnQuestComplete: 0
+      npcEntity: {fileID: 0}
+      npcEntityId: 0
+      npcEntityTitle: 
+      npcEntityTitles: []
+      talkToNpcDialog: {fileID: 0}
+      completeAfterTalked: 0
+      customQuestTask: {fileID: 0}
+      useCustomDescription: 0
+      defaultDescription: 
+      languageSpecificDescriptions: []
+      useCustomCompletedDescription: 0
+      defaultCompletedDescription: 
+      languageSpecificCompletedDescriptions: []
+  abandonQuests: []
+  resetAttributes: 0
+  resetSkills: 0
+  changeCharacterClass: {fileID: 0}
+  changeCharacterFaction: {fileID: 0}
+  rewardExp: 50
+  rewardGold: 5000
+  rewardStatPoints: 0
+  rewardSkillPoints: 0
+  rewardCurrencies: []
+  rewardItems:
+  - item: {fileID: 11400000, guid: 99ce6353c3a0b344bb452d0b2035feed, type: 2}
+    level: 0
+    amount: 1
+  selectableRewardItems: []
+  randomRewardItems: []
+  repeatType: 0
+  canAbandon: 1
+  nextAssignQuests: []
+  autoTrackQuest: 0

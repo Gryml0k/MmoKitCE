@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d38317bfc76fb42a04d40e1e61328f, type: 3}
+  m_Name: Formula_DoorInteract
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: 
+  languageSpecificTitles: []
+  defaultDescription: 
+  languageSpecificDescriptions: []
+  category: 
+  icon: {fileID: 0}
+  addressableIcon:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemCraft:
+    craftingItem: {fileID: 11400000, guid: 6038b1c354df3654b9541fa590ffa8e1, type: 2}
+    amount: 1
+    requireGold: 0
+    requireItems:
+    - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+      level: 0
+      amount: 2
+    requireCurrencies: []
+  craftDuration: 10
+  canBeCraftedWithoutSource: 1

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a278d249b1987cf4ebdb60bb4769bf33, type: 3}
+  m_Name: ChangeClassToArcher
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: Change Class To Archer
+  languageSpecificTitles: []
+  defaultDescription: Change character's class to Archer
+  languageSpecificDescriptions: []
+  category: ClassChange
+  icon: {fileID: 0}
+  addressableIcon:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  requirement:
+    character: {fileID: 11400000, guid: 1f9d2937bcd564b47b49c53b58e4e8af, type: 2}
+    faction: {fileID: 0}
+    level: 10
+    completedQuests: []
+  tasks: []
+  randomTasks: []
+  abandonQuests:
+  - {fileID: 11400000, guid: 6056336ec0036704286c5e405962806a, type: 2}
+  - {fileID: 11400000, guid: 2d4ff6afdaf8a6646968fbc633a89ae9, type: 2}
+  resetAttributes: 0
+  resetSkills: 1
+  changeCharacterClass: {fileID: 11400000, guid: 0122f68aff58f2a4e995208bf67f18ba,
+    type: 2}
+  changeCharacterFaction: {fileID: 0}
+  rewardExp: 0
+  rewardGold: 0
+  rewardStatPoints: 0
+  rewardSkillPoints: 0
+  rewardCurrencies: []
+  rewardItems:
+  - item: {fileID: 11400000, guid: 99ce6353c3a0b344bb452d0b2035feed, type: 2}
+    level: 0
+    amount: 1
+  selectableRewardItems: []
+  randomRewardItems: []
+  repeatType: 0
+  canAbandon: 1
+  nextAssignQuests: []
+  autoTrackQuest: 0

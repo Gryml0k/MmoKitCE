@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa3c5aa526745642871dbc0a47d4cbb, type: 3}
+  m_Name: TestItemRandomByWeightTable
+  m_EditorClassIdentifier: 
+  randomItems:
+  - item: {fileID: 11400000, guid: c4f83999d394a4c4cbd65dc4e44885df, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 1
+    maxAmount: 1
+    randomWeight: 10
+  - item: {fileID: 11400000, guid: 84eba039ed32fda4693c20ebba14c822, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 10
+    maxAmount: 30
+    randomWeight: 20
+  - item: {fileID: 11400000, guid: cef25d7570c129340a039818a8fca7c6, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 1
+    maxAmount: 1
+    randomWeight: 5
+  - item: {fileID: 11400000, guid: effa88bea19e7fe4babaf64ec0c771a2, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 2
+    maxAmount: 10
+    randomWeight: 15
+  noDropWeight: 0

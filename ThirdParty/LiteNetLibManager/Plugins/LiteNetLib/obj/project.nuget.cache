@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "xuNEB8Y4ODI=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\gryml\\LOOTbag\\MmoKitCE\\Assets\\MmoKitCE\\ThirdParty\\LiteNetLibManager\\Plugins\\LiteNetLib\\LiteNetLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gryml\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.25\\microsoft.net.illink.tasks.8.0.25.nupkg.sha512",
+    "C:\\Users\\gryml\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\gryml\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\gryml\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

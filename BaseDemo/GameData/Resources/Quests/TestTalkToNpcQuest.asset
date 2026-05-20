@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a278d249b1987cf4ebdb60bb4769bf33, type: 3}
+  m_Name: TestTalkToNpcQuest
+  m_EditorClassIdentifier: 
+  btnValidate: 0
+  id: 
+  defaultTitle: Test Talk To NPC
+  languageSpecificTitles: []
+  defaultDescription: Talk to "Test Quest 02"
+  languageSpecificDescriptions: []
+  category: Daily
+  icon: {fileID: 0}
+  requirement:
+    character: {fileID: 0}
+    faction: {fileID: 0}
+    level: 0
+    completedQuests: []
+  tasks:
+  - taskType: 2
+    monsterCharacterAmount:
+      monster: {fileID: 0}
+      amount: 0
+    itemAmount:
+      item: {fileID: 0}
+      level: 0
+      amount: 0
+    doNotDecreaseItemsOnQuestComplete: 0
+    npcEntity: {fileID: 114518365902765542, guid: 10a566787edb607449db3c80b1680477, type: 3}
+    npcEntityId: 0
+    npcEntityTitle: 
+    npcEntityTitles: []
+    talkToNpcDialog: {fileID: 11400000, guid: b30656399f788fb478ce426601143aa7, type: 2}
+    completeAfterTalked: 1
+    customQuestTask: {fileID: 0}
+    useCustomDescription: 0
+    defaultDescription: 
+    languageSpecificDescriptions: []
+    useCustomCompletedDescription: 0
+    defaultCompletedDescription: 
+    languageSpecificCompletedDescriptions: []
+  randomTasks:
+  - tasks:
+    - taskType: 2
+      monsterCharacterAmount:
+        monster: {fileID: 0}
+        amount: 0
+      itemAmount:
+        item: {fileID: 0}
+        level: 0
+        amount: 0
+      doNotDecreaseItemsOnQuestComplete: 0
+      npcEntity: {fileID: 114518365902765542, guid: 10a566787edb607449db3c80b1680477, type: 3}
+      npcEntityId: -1396253799
+      npcEntityTitle: 
+      npcEntityTitles: []
+      talkToNpcDialog: {fileID: 11400000, guid: b30656399f788fb478ce426601143aa7, type: 2}
+      completeAfterTalked: 1
+      customQuestTask: {fileID: 0}
+      useCustomDescription: 0
+      defaultDescription: 
+      languageSpecificDescriptions: []
+      useCustomCompletedDescription: 0
+      defaultCompletedDescription: 
+      languageSpecificCompletedDescriptions: []
+  abandonQuests: []
+  resetAttributes: 0
+  resetSkills: 0
+  changeCharacterClass: {fileID: 0}
+  changeCharacterFaction: {fileID: 0}
+  rewardExp: 1000
+  rewardGold: 0
+  rewardStatPoints: 0
+  rewardSkillPoints: 0
+  rewardCurrencies:
+  - currency: {fileID: 11400000, guid: 02d40019f7430f0459286df57e6b450b, type: 2}
+    amount: 100
+  rewardItems:
+  - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+    level: 0
+    amount: 20
+  - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+    level: 0
+    amount: 20
+  selectableRewardItems:
+  - item: {fileID: 11400000, guid: 20778c7ba3f0b774cabeb64adee7b5b6, type: 2}
+    level: 0
+    amount: 1
+  - item: {fileID: 11400000, guid: 6ac6a202d55256c4b90441cd9f55751c, type: 2}
+    level: 0
+    amount: 1
+  - item: {fileID: 11400000, guid: 08b3fcee123fd6a4c9282abf3ff47020, type: 2}
+    level: 0
+    amount: 1
+  - item: {fileID: 11400000, guid: ff506a51bc63736409429d6b4300cf79, type: 2}
+    level: 0
+    amount: 1
+  randomRewardItems:
+  - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 0
+    maxAmount: 1
+    randomWeight: 10
+  - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
+    minLevel: 0
+    maxLevel: 0
+    minAmount: 0
+    maxAmount: 1
+    randomWeight: 10
+  repeatType: 2
+  canAbandon: 1
+  nextAssignQuests: []
+  autoTrackQuest: 0

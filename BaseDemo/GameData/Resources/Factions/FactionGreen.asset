@@ -1,0 +1,341 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229916a59c252f84a99d451ffa6dddb8, type: 3}
+  m_Name: FactionGreen
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: Green
+  languageSpecificTitles: []
+  defaultDescription: 
+  languageSpecificDescriptions: []
+  category: 
+  icon: {fileID: 21300000, guid: 88db101f0655b874c8b38327f7f6d3a1, type: 3}
+  addressableIcon:
+    m_AssetGUID: 88db101f0655b874c8b38327f7f6d3a1
+    m_SubObjectName: green
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 1
+  isLocked: 0
+  buff:
+    tag: 
+    restrictTags: []
+    enableApplyChance: 0
+    applyChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    increaseStats:
+      baseStats:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
+        testStat1: 0
+      statsIncreaseEachLevel:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
+        testStat1: 0
+      statsIncreaseEachLevelByLevels: []
+    increaseStatsRate:
+      baseStats:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
+        testStat1: 0
+      statsIncreaseEachLevel:
+        hp: 0
+        hpRecovery: 0
+        hpLeechRate: 0
+        mp: 0
+        mpRecovery: 0
+        mpLeechRate: 0
+        stamina: 0
+        staminaRecovery: 0
+        staminaLeechRate: 0
+        food: 0
+        water: 0
+        accuracy: 0
+        evasion: 0
+        criRate: 0
+        criDmgRate: 0
+        blockRate: 0
+        blockDmgRate: 0
+        moveSpeed: 0
+        atkSpeed: 0
+        weightLimit: 0
+        slotLimit: 0
+        goldRate: 0
+        expRate: 0
+        itemDropRate: 0
+        jumpHeight: 0
+        headDamageAbsorbs: 0
+        bodyDamageAbsorbs: 0
+        fallDamageAbsorbs: 0
+        gravityRate: 0
+        protectedSlotLimit: 0
+        ammoCapacity: 0
+        recoilRate: 0
+        rateOfFire: 0
+        reloadDuration: 0
+        fireSpreadRangeRate: 0
+        fireSpread: 0
+        decreaseFoodDecreation: 0
+        decreaseWaterDecreation: 0
+        decreaseStaminaDecreation: 0
+        buyItemPriceRate: 0
+        sellItemPriceRate: 0
+        testStat1: 0
+      statsIncreaseEachLevelByLevels: []
+    increaseAttributes: []
+    increaseAttributesRate: []
+    increaseResistances: []
+    increaseArmors: []
+    increaseArmorsRate: []
+    increaseDamages: []
+    increaseDamagesRate: []
+    increaseSkills: []
+    isOverrideDamageInfo: 0
+    overrideDamageInfo:
+      damageType: 0
+      hitOnlySelectedTarget: 0
+      startAttackDistance: 0
+      hitDistance: 0
+      hitFov: 0
+      missileDistance: 0
+      missileSpeed: 0
+      missileDamageEntity: {fileID: 0}
+      addressableMissileDamageEntity:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      projectileEffect: {fileID: 0}
+      addressableProjectEffect:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      pierceThroughEntities: 0
+      impactEffects: {fileID: 0}
+      throwForce: 0
+      throwableLifeTime: 0
+      throwableDamageEntity: {fileID: 0}
+      addressableThrowableDamageEntity:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      customDamageInfo: {fileID: 0}
+    isOverrideSkills: 0
+    overrideSkills: []
+    mount:
+      mountEntity: {fileID: 0}
+      addressableMountEntity:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+        hashAssetId: 0
+      level:
+        baseAmount: 0
+        amountIncreaseEachLevel: 0
+        amountIncreaseEachLevelByLevels: []
+    increaseStatusEffectResistances: []
+    duration:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    recoveryHp:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    recoveryMp:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    recoveryStamina:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    recoveryFood:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    recoveryWater:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    buffRemovals: []
+    damageOverTimes: []
+    ailment: 0
+    disallowMove: 0
+    disallowSprint: 0
+    disallowWalk: 0
+    disallowJump: 0
+    disallowDash: 0
+    disallowCrouch: 0
+    disallowCrawl: 0
+    disallowAttack: 0
+    disallowUseSkill: 0
+    disallowUseItem: 0
+    freezeAnimation: 0
+    removeBuffWhenAttackChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    removeBuffWhenAttackedChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    removeBuffWhenUseSkillChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    removeBuffWhenUseItemChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    removeBuffWhenPickupItemChance:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    isHide: 0
+    isRevealsHide: 0
+    isBlind: 0
+    muteFootstepSound: 0
+    selfStatusEffectsWhenAttacking: []
+    enemyStatusEffectsWhenAttacking: []
+    selfStatusEffectsWhenAttacked: []
+    enemyStatusEffectsWhenAttacked: []
+    doNotRemoveOnDead: 0
+    isExtendDuration: 0
+    maxStack:
+      baseAmount: 0
+      amountIncreaseEachLevel: 0
+      amountIncreaseEachLevelByLevels: []
+    effects: []
+    addressableEffects: []

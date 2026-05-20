@@ -53,7 +53,7 @@ addons without touching core networking code.
 
 ## Quick Start / Installation Wizard
 
-1. **Install package from git URL**
+1. **Install dependencies**
 
 <img width="631" height="263" alt="install-package" src="https://github.com/user-attachments/assets/6e63c1d8-7f65-4b10-9bcc-8bca07cbfe5e" />
 
@@ -62,11 +62,11 @@ Open Window → **Package Manager** and click **Add package from git URL**
 https://github.com/denariigames/MmoKitCE_Installer.git
 ```
 
-2. **Run the Wizard to import Settings and Latest Release**
+2. **Apply recommended project settings**
 
-<img width="601" height="509" alt="Wizard" src="https://github.com/user-attachments/assets/4618edae-0372-45ad-a7f5-e49b59ad92dc" />
+<img width="609" height="512" alt="setup-wizard" src="https://github.com/user-attachments/assets/cab53039-f83f-4034-82d3-d3a101b6afb2" />
 
-A setup wizard will appear after the package is installed. If the Wizard does not appear or is inadventently closed, you can reopen at Window → Tools → MmoKitCE → Install → **Show Setup Wizard**
+A setup wizard will appear after the package is installed. If the Wizard does not appear or is inadventently closed, you can reopen at Window → MMORPG KIT → MMOKitCE → **Show Setup Wizard**
 
 Click **Import Settings** to install base project settings. The following settings will be overwritten by this process:
 
@@ -80,9 +80,16 @@ Click **Import Settings** to install base project settings. The following settin
 
 The original Kit had additional settings which were not included in CE: AudioManager, EditorBuildSettings, EditorSettings, GraphicSettings, ShaderGraphSettings, UnityConnectSettings, VersionControlSettings
 
-Click **Import MmoKitCE** to install the latest release.
+3. **Clone git repo**
 
-After installation, browse available addons via the Addon Manager window (Window → Tools → MmoKitCE → Develop → **Addon Manager**). Have fun building!
+The preferred method of installing CE is with a git subrepo within your project Assets directory. 
+
+```sh
+$ cd <your project>/Assets
+$ git clone https://github.com/denariigames/MmoKitCE.git
+```
+
+After installation, browse available addons via the Addon Manager window (Window → MMORPG Kit → MmoKitCE → **Addon Manager**). Have fun building!
 
 ## Yo! Where's the demo?
 
@@ -91,8 +98,12 @@ MmoKitCE includes BaseDemo, a minimal implementation that is intended to demonst
 
 ## Updating MmoKitCE
 
-To update CE, update the Package Manager and re-run Wizard.
+To update CE, simply use a git pull.
 
+```sh
+$ cd <your project>/Assets/MmoKitCE
+$ git pull
+```
 
 ## Thanks
 

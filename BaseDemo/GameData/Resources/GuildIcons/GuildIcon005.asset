@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3a808e1dd55dc4fa241556a7d69ee0, type: 3}
+  m_Name: GuildIcon005
+  m_EditorClassIdentifier: 
+  id: 
+  defaultTitle: 005
+  languageSpecificTitles: []
+  defaultDescription: 
+  languageSpecificDescriptions: []
+  category: 
+  icon: {fileID: 21300000, guid: 546fe97f2e8cea54ca61e55739a4cf29, type: 3}
+  addressableIcon:
+    m_AssetGUID: 546fe97f2e8cea54ca61e55739a4cf29
+    m_SubObjectName: GuildIcon005
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 1
