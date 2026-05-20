@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4898899125313883396}
   - component: {fileID: 5555039954835809266}
   - component: {fileID: 1575641527122854988}
+  - component: {fileID: 5863803337888243141}
   m_Layer: 0
   m_Name: GameInstance-CE
   m_TagString: Untagged
@@ -232,7 +233,6 @@ MonoBehaviour:
   exportSocialSystemSettingAsJson: 0
   exportMinimalItemsAsJson: 0
   exportCharacterCreationDataAsJson: 0
-  cashShopDatabase: {fileID: 11400000, guid: 2b4bf4459ea1d8445a4b319329589b3c, type: 2}
   homeScene:
     sceneAsset: {fileID: 102900000, guid: d529c814bb9fcd14289ac4141b27e951, type: 3}
     sceneName: BaseHome-CE
@@ -435,3 +435,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c89ff02ae1303546aaa8e11bad1aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5863803337888243141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6325369373293676653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e77f20cb7f4fbf940d2f9ec2b5f49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiplayerARPG.GameplayUISceneLoader
+  uiScene:
+    sceneAsset: {fileID: 0}
+    sceneName: 
+  gameplayScenes: []

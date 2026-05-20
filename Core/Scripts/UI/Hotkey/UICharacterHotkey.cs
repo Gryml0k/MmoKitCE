@@ -73,6 +73,8 @@ namespace MultiplayerARPG
         {
             if (!autoAssignItem)
                 return;
+            if (UICharacterHotkeys == null || GameInstance.PlayingCharacter == null || !GameInstance.PlayingCharacterEntity)
+                return;
             if (!GetAssignedSkill(out _, out _) && !GetAssignedItem(out _, out _, out _))
             {
                 foreach (CharacterItem nonEquipItem in GameInstance.PlayingCharacter.NonEquipItems)
@@ -97,6 +99,8 @@ namespace MultiplayerARPG
         public override void ManagedUpdate()
         {
             base.ManagedUpdate();
+            if (UICharacterHotkeys == null)
+                return;
 
             if (placeHolders != null && placeHolders.Length > 0)
             {
@@ -447,6 +451,8 @@ namespace MultiplayerARPG
 
         public bool CanAssignGuildSkill(GuildSkill guildSkill)
         {
+            if (UICharacterHotkeys == null)
+                return false;
             if (UICharacterHotkeys.doNotIncludeGuildSkills)
                 return false;
             if (guildSkill == null)
@@ -472,6 +478,8 @@ namespace MultiplayerARPG
 
         public bool CanAssignCharacterSkill(CharacterSkill characterSkill)
         {
+            if (UICharacterHotkeys == null)
+                return false;
             if (UICharacterHotkeys.doNotIncludeSkills)
                 return false;
             if (characterSkill.IsEmpty())
@@ -503,11 +511,15 @@ namespace MultiplayerARPG
 
         public bool CanAssignCharacterItem(CharacterItem characterItem)
         {
+            if (UICharacterHotkeys == null)
+                return false;
             if (UICharacterHotkeys.doNotIncludeItems)
                 return false;
             if (characterItem.IsEmptySlot())
                 return false;
             BaseItem item = characterItem.GetItem();
+            if (item == null)
+                return false;
             if (UICharacterHotkeys.filterCategories.Count > 0)
             {
                 // Trim filter categories

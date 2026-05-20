@@ -92,6 +92,7 @@ namespace MultiplayerARPG
                 return _cacheSelectionManager;
             }
         }
+        private BasePlayerCharacterEntity _subscribedCharacter;
 
         protected override void OnDestroy()
         {
@@ -155,19 +156,41 @@ namespace MultiplayerARPG
 
         protected virtual void OnEnable()
         {
+            GameInstance.OnSetPlayingCharacterEvent += OnSetPlayingCharacter;
+            InitCaches();
             UpdateData();
-            if (!GameInstance.PlayingCharacterEntity) return;
-            GameInstance.PlayingCharacterEntity.onRecached += UpdateData;
-            GameInstance.PlayingCharacterEntity.onNonEquipItemsOperation += PlayingCharacterEntity_onNonEquipItemsOperation;
-            GameInstance.PlayingCharacterEntity.onHotkeysOperation += PlayingCharacterEntity_onHotkeysOperation;
+            RegisterPlayingCharacterEvents();
         }
 
         protected virtual void OnDisable()
         {
+            GameInstance.OnSetPlayingCharacterEvent -= OnSetPlayingCharacter;
+            UnregisterPlayingCharacterEvents();
+        }
+
+        private void OnSetPlayingCharacter(IPlayerCharacterData playingCharacter)
+        {
+            UpdateData();
+            RegisterPlayingCharacterEvents();
+        }
+
+        private void RegisterPlayingCharacterEvents()
+        {
+            UnregisterPlayingCharacterEvents();
             if (!GameInstance.PlayingCharacterEntity) return;
-            GameInstance.PlayingCharacterEntity.onRecached -= UpdateData;
-            GameInstance.PlayingCharacterEntity.onNonEquipItemsOperation -= PlayingCharacterEntity_onNonEquipItemsOperation;
-            GameInstance.PlayingCharacterEntity.onHotkeysOperation -= PlayingCharacterEntity_onHotkeysOperation;
+            _subscribedCharacter = GameInstance.PlayingCharacterEntity;
+            _subscribedCharacter.onRecached += UpdateData;
+            _subscribedCharacter.onNonEquipItemsOperation += PlayingCharacterEntity_onNonEquipItemsOperation;
+            _subscribedCharacter.onHotkeysOperation += PlayingCharacterEntity_onHotkeysOperation;
+        }
+
+        private void UnregisterPlayingCharacterEvents()
+        {
+            if (!_subscribedCharacter) return;
+            _subscribedCharacter.onRecached -= UpdateData;
+            _subscribedCharacter.onNonEquipItemsOperation -= PlayingCharacterEntity_onNonEquipItemsOperation;
+            _subscribedCharacter.onHotkeysOperation -= PlayingCharacterEntity_onHotkeysOperation;
+            _subscribedCharacter = null;
         }
 
         private void PlayingCharacterEntity_onNonEquipItemsOperation(LiteNetLibSyncListOp op, int itemIndex, CharacterItem oldItem, CharacterItem newItem)
@@ -199,6 +222,9 @@ namespace MultiplayerARPG
         public virtual void UpdateData()
         {
             InitCaches();
+            if (!GameInstance.PlayingCharacterEntity)
+                return;
+
             IList<CharacterHotkey> characterHotkeys = GameInstance.PlayingCharacterEntity.Hotkeys;
             for (int i = 0; i < characterHotkeys.Count; ++i)
             {

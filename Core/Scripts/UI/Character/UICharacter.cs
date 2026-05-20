@@ -90,6 +90,7 @@ namespace MultiplayerARPG
         protected Dictionary<StatusEffect, float> _tempStatusEffectResistances = null;
         protected Dictionary<DamageElement, MinMaxFloat> _tempRightHandDamages = null;
         protected Dictionary<DamageElement, MinMaxFloat> _tempLeftHandDamages = null;
+        private BasePlayerCharacterEntity _subscribedOwningCharacter;
 
         public bool NotForOwningCharacter
         {
@@ -143,6 +144,8 @@ namespace MultiplayerARPG
 
         protected override void OnDestroy()
         {
+            GameInstance.OnSetPlayingCharacterEvent -= OnSetPlayingCharacter;
+            UnregisterOwningCharacterEvents();
             base.OnDestroy();
             uiTextId = null;
             uiTextName = null;
@@ -213,6 +216,7 @@ namespace MultiplayerARPG
 
         protected override void OnEnable()
         {
+            GameInstance.OnSetPlayingCharacterEvent += OnSetPlayingCharacter;
             UpdateOwningCharacterData();
             RegisterOwningCharacterEvents();
             base.OnEnable();
@@ -220,6 +224,7 @@ namespace MultiplayerARPG
 
         protected override void OnDisable()
         {
+            GameInstance.OnSetPlayingCharacterEvent -= OnSetPlayingCharacter;
             UnregisterOwningCharacterEvents();
             base.OnDisable();
         }
@@ -228,19 +233,27 @@ namespace MultiplayerARPG
         {
             UnregisterOwningCharacterEvents();
             if (notForOwningCharacter || !GameInstance.PlayingCharacterEntity) return;
-            GameInstance.PlayingCharacterEntity.onRecached += UpdateOwningCharacterData;
+            _subscribedOwningCharacter = GameInstance.PlayingCharacterEntity;
+            _subscribedOwningCharacter.onRecached += UpdateOwningCharacterData;
 #if !DISABLE_CUSTOM_CHARACTER_CURRENCIES
-            GameInstance.PlayingCharacterEntity.onCurrenciesOperation += OnCurrenciesOperation;
+            _subscribedOwningCharacter.onCurrenciesOperation += OnCurrenciesOperation;
 #endif
         }
 
         public void UnregisterOwningCharacterEvents()
         {
-            if (!GameInstance.PlayingCharacterEntity) return;
-            GameInstance.PlayingCharacterEntity.onRecached -= UpdateOwningCharacterData;
+            if (!_subscribedOwningCharacter) return;
+            _subscribedOwningCharacter.onRecached -= UpdateOwningCharacterData;
 #if !DISABLE_CUSTOM_CHARACTER_CURRENCIES
-            GameInstance.PlayingCharacterEntity.onCurrenciesOperation -= OnCurrenciesOperation;
+            _subscribedOwningCharacter.onCurrenciesOperation -= OnCurrenciesOperation;
 #endif
+            _subscribedOwningCharacter = null;
+        }
+
+        private void OnSetPlayingCharacter(IPlayerCharacterData playingCharacter)
+        {
+            UpdateOwningCharacterData();
+            RegisterOwningCharacterEvents();
         }
 
         private void OnCurrenciesOperation(LiteNetLibSyncListOp operation, int index, CharacterCurrency oldItem, CharacterCurrency newItem)
@@ -250,8 +263,11 @@ namespace MultiplayerARPG
 
         public void UpdateOwningCharacterData()
         {
-            if (notForOwningCharacter || GameInstance.PlayingCharacter == null) return;
-            Data = GameInstance.PlayingCharacter;
+            if (notForOwningCharacter) return;
+            if (GameInstance.PlayingCharacterEntity)
+                Data = GameInstance.PlayingCharacterEntity;
+            else if (GameInstance.PlayingCharacter != null)
+                Data = GameInstance.PlayingCharacter;
         }
 
         public void UpdateOwningCharacterData(BaseCharacterEntity target)
@@ -262,59 +278,39 @@ namespace MultiplayerARPG
         public override void ManagedUpdate()
         {
             base.ManagedUpdate();
-            CharacterDataCache cache = Data.GetCaches();
+            ICharacterData characterData = !notForOwningCharacter && GameInstance.PlayingCharacterEntity ? GameInstance.PlayingCharacterEntity : Data;
+            if (characterData == null)
+                return;
+
+            CharacterDataCache cache = GameInstance.Singleton != null && GameInstance.Singleton.GameplayRule != null ? characterData.GetCaches() : null;
+
             // Hp
-            int currentHp = 0;
-            int maxHp = 0;
-            if (Data != null)
-            {
-                currentHp = Data.CurrentHp;
-                maxHp = cache?.MaxHp ?? 0;
-            }
+            int currentHp = characterData.CurrentHp;
+            int maxHp = Mathf.Max(currentHp, cache?.MaxHp ?? currentHp);
             if (uiGageHp != null)
                 uiGageHp.Update(currentHp, maxHp);
 
             // Mp
-            int currentMp = 0;
-            int maxMp = 0;
-            if (Data != null)
-            {
-                currentMp = Data.CurrentMp;
-                maxMp = cache?.MaxMp ?? 0;
-            }
+            int currentMp = characterData.CurrentMp;
+            int maxMp = Mathf.Max(currentMp, cache?.MaxMp ?? currentMp);
             if (uiGageMp != null)
                 uiGageMp.Update(currentMp, maxMp);
 
             // Stamina
-            int currentStamina = 0;
-            int maxStamina = 0;
-            if (Data != null)
-            {
-                currentStamina = Data.CurrentStamina;
-                maxStamina = cache?.MaxStamina ?? 0;
-            }
+            int currentStamina = characterData.CurrentStamina;
+            int maxStamina = Mathf.Max(currentStamina, cache?.MaxStamina ?? currentStamina);
             if (uiGageStamina != null)
                 uiGageStamina.Update(currentStamina, maxStamina);
 
             // Food
-            int currentFood = 0;
-            int maxFood = 0;
-            if (Data != null)
-            {
-                currentFood = Data.CurrentFood;
-                maxFood = cache?.MaxFood ?? 0;
-            }
+            int currentFood = characterData.CurrentFood;
+            int maxFood = Mathf.Max(currentFood, cache?.MaxFood ?? currentFood);
             if (uiGageFood != null)
                 uiGageFood.Update(currentFood, maxFood);
 
             // Water
-            int currentWater = 0;
-            int maxWater = 0;
-            if (Data != null)
-            {
-                currentWater = Data.CurrentWater;
-                maxWater = cache?.MaxWater ?? 0;
-            }
+            int currentWater = characterData.CurrentWater;
+            int maxWater = Mathf.Max(currentWater, cache?.MaxWater ?? currentWater);
             if (uiGageWater != null)
                 uiGageWater.Update(currentWater, maxWater);
         }
@@ -427,6 +423,9 @@ namespace MultiplayerARPG
 
         protected override void UpdateData()
         {
+            if (Data == null || GameInstance.Singleton == null || GameInstance.Singleton.GameplayRule == null)
+                return;
+
             IPlayerCharacterData playerCharacter = Data as IPlayerCharacterData;
 
             CleanTempData();
@@ -450,20 +449,24 @@ namespace MultiplayerARPG
                 willReleaseRightHandDamages: false,
                 willReleaseLeftHandDamages: false);
 
+            CharacterDataCache cache = Data.GetCaches();
+            if (cache == null)
+                return;
+
             if (uiTextWeightLimit != null)
             {
                 uiTextWeightLimit.text = ZString.Format(
                     LanguageManager.GetText(formatKeyWeightLimitStats),
-                    Data.GetCaches().TotalItemWeight.ToString("N2"),
-                    Data.GetCaches().LimitItemWeight.ToString("N2"));
+                    cache.TotalItemWeight.ToString("N2"),
+                    cache.LimitItemWeight.ToString("N2"));
             }
 
             if (uiTextSlotLimit != null)
             {
                 uiTextSlotLimit.text = ZString.Format(
                     LanguageManager.GetText(formatKeySlotLimitStats),
-                    Data.GetCaches().TotalItemSlot.ToString("N0"),
-                    Data.GetCaches().LimitItemSlot.ToString("N0"));
+                    cache.TotalItemSlot.ToString("N0"),
+                    cache.LimitItemSlot.ToString("N0"));
             }
 
             if (uiTextAllDamages != null)

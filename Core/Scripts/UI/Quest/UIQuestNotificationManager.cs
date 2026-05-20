@@ -44,6 +44,7 @@ namespace MultiplayerARPG
 
         private List<QuestRecord> comparingQuests = new List<QuestRecord>();
         private float awakenTime = 0f;
+        private BasePlayerCharacterEntity _subscribedCharacter;
 
         private void Awake()
         {
@@ -57,15 +58,28 @@ namespace MultiplayerARPG
 
         public void Setup()
         {
+            BasePlayerCharacterEntity character = GameInstance.PlayingCharacterEntity;
+            if (character == null)
+                return;
+
             MakeComparingQuests();
-            GameInstance.PlayingCharacterEntity.onQuestsOperation += OnQuestsOperation;
-            GameInstance.PlayingCharacterEntity.onNonEquipItemsOperation += OnNonEquipItemsOperation;
+            if (_subscribedCharacter == character)
+                return;
+
+            Desetup();
+            _subscribedCharacter = character;
+            _subscribedCharacter.onQuestsOperation += OnQuestsOperation;
+            _subscribedCharacter.onNonEquipItemsOperation += OnNonEquipItemsOperation;
         }
 
         public void Desetup()
         {
-            GameInstance.PlayingCharacterEntity.onQuestsOperation -= OnQuestsOperation;
-            GameInstance.PlayingCharacterEntity.onNonEquipItemsOperation -= OnNonEquipItemsOperation;
+            if (_subscribedCharacter == null)
+                return;
+
+            _subscribedCharacter.onQuestsOperation -= OnQuestsOperation;
+            _subscribedCharacter.onNonEquipItemsOperation -= OnNonEquipItemsOperation;
+            _subscribedCharacter = null;
         }
 
         private QuestRecord MakeRecord(CharacterQuest characterQuest)
@@ -91,7 +105,11 @@ namespace MultiplayerARPG
         private void MakeComparingQuests()
         {
             comparingQuests.Clear();
-            foreach (CharacterQuest characterQuest in GameInstance.PlayingCharacterEntity.Quests)
+            BasePlayerCharacterEntity character = GameInstance.PlayingCharacterEntity;
+            if (character == null)
+                return;
+
+            foreach (CharacterQuest characterQuest in character.Quests)
             {
                 comparingQuests.Add(MakeRecord(characterQuest));
             }

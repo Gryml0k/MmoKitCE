@@ -112,6 +112,7 @@ namespace MultiplayerARPG
 
         protected int _buildingItemIndex = -1;
         protected UsingSkillData _queueUsingSkill;
+        private bool _ownsUISceneGameplay;
 
         protected virtual void Awake()
         {
@@ -135,23 +136,35 @@ namespace MultiplayerARPG
 
         protected virtual void Setup(BasePlayerCharacterEntity characterEntity)
         {
-            BaseUISceneGameplay tempPrefab = null;
+            _ownsUISceneGameplay = false;
+            UISceneGameplay = BaseUISceneGameplay.Singleton;
+            if (UISceneGameplay == null)
+            {
+                BaseUISceneGameplay tempPrefab = null;
 #if !EXCLUDE_PREFAB_REFS || DISABLE_ADDRESSABLES
-            tempPrefab = CurrentGameInstance.UISceneGameplayPrefab;
+                tempPrefab = CurrentGameInstance.UISceneGameplayPrefab;
 #endif
 #if !DISABLE_ADDRESSABLES
-            AssetReferenceBaseUISceneGameplay tempAddressablePrefab = CurrentGameInstance.AddressableUISceneGameplayPrefab;
+                AssetReferenceBaseUISceneGameplay tempAddressablePrefab = CurrentGameInstance.AddressableUISceneGameplayPrefab;
 #endif
-            BaseUISceneGameplay loadedPrefab;
+                BaseUISceneGameplay loadedPrefab;
 #if !DISABLE_ADDRESSABLES
-            loadedPrefab = tempAddressablePrefab.GetOrLoadAssetOrUsePrefab(tempPrefab);
+                loadedPrefab = tempAddressablePrefab.GetOrLoadAssetOrUsePrefab(tempPrefab);
 #else
-            loadedPrefab = tempPrefab;
+                loadedPrefab = tempPrefab;
 #endif
-            if (loadedPrefab != null)
-                UISceneGameplay = Instantiate(loadedPrefab);
+                if (loadedPrefab != null)
+                {
+                    UISceneGameplay = Instantiate(loadedPrefab);
+                    _ownsUISceneGameplay = true;
+                }
+            }
             if (UISceneGameplay != null)
+            {
+                if (!UISceneGameplay.gameObject.activeSelf)
+                    UISceneGameplay.gameObject.SetActive(true);
                 UISceneGameplay.OnControllerSetup(characterEntity);
+            }
             if (onSetup != null)
                 onSetup.Invoke(this);
         }
@@ -161,7 +174,12 @@ namespace MultiplayerARPG
             if (UISceneGameplay != null)
             {
                 UISceneGameplay.OnControllerDesetup(characterEntity);
-                Destroy(UISceneGameplay.gameObject);
+                if (_ownsUISceneGameplay)
+                    Destroy(UISceneGameplay.gameObject);
+                else
+                    UISceneGameplay.gameObject.SetActive(false);
+                UISceneGameplay = null;
+                _ownsUISceneGameplay = false;
             }
             if (onDesetup != null)
                 onDesetup.Invoke(this);

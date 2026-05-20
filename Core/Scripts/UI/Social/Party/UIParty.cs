@@ -155,6 +155,9 @@ namespace MultiplayerARPG
 
         public override int GetSocialId()
         {
+            if (GameInstance.PlayingCharacter == null)
+                return 0;
+
             return GameInstance.PlayingCharacter.PartyId;
         }
 
@@ -177,11 +180,17 @@ namespace MultiplayerARPG
 
         public override bool OwningCharacterIsLeader()
         {
+            if (GameInstance.PlayingCharacter == null)
+                return false;
+
             return IsLeader(GameInstance.PlayingCharacter.Id);
         }
 
         public override bool OwningCharacterCanKick()
         {
+            if (GameInstance.PlayingCharacter == null)
+                return false;
+
             return CanKick(GameInstance.PlayingCharacter.Id);
         }
     }
